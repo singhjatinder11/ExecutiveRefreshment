@@ -1,0 +1,329 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+<script src="~/js/script_s_h.js"></script>
+
+@model IEnumerable<ExecutiveRefreshment.Entity.product>
+@{
+    ViewBag.Title = "Products";
+}
+ <style type="text/css">
+     .customTD td{
+         border: 1px solid black;
+     }
+ </style>
+<div  ng-controller="ProductController">
+    <div class="row bg_grey padding30" style="margin-left: 0px !important;">
+
+        <div class="container">
+            <h2 class="float_left">Products -> @ViewBag.CategoryName</h2>
+            <form class="select">
+                <select id="ddlSort" onchange="sort()">
+                    <option value="">Select Sorting</option>
+                    <option value="PHF">Price High First</option>
+                    <option value="PLF">Price Low First</option>
+                    <option value="ASC">Ascending</option>
+                    <option value="DESC">Descending</option>
+                </select>
+            </form>
+        </div>
+
+
+    </div>
+
+    <div class="row  padding50" style="padding-top:15px !important;">
+        <div class="container">
+            <div class="pro_menu">
+                <div class="bg_grey"><h3>Search</h3></div>
+
+                <div>
+                    @*@using (@Html.BeginForm("Index", "Product", FormMethod.Get, new { @id = ViewBag.ID, catid = ViewBag.CatID, title = ViewBag.ProductTitle })){*@
+                    <form id="searchForm" action="@Url.Action("index", "product",  new { @id = ViewBag.ID, catid = ViewBag.CatID, title = ViewBag.ProductTitle })" method="get">
+                        <input type="search" name="q" id="q" class="search" onblur="search(this)" placeholder="Product Code">
+
+
+                    </form>
+                </div>
+                <div class="bg_grey"><h3>@ViewBag.ProductTitle</h3></div>
+                <div>
+                    <ul>
+                        @foreach (var cat in ViewBag.CategoryList)
+                    {
+                            <li><a href="@Url.Action("index","product", new {   @id = ViewBag.ID, catid=cat.id, title = ViewBag.ProductTitle })">@cat.name</a></li>
+                    }
+                        @*<li><a href="#">Apple Cider</a></li>
+                            <li><a href="#">Hot chocolate / cocoa</a></li>
+                            <li><a href="#">K - Cups</a></li>
+                            <li><a href="#">Portion Pack</a></li>
+                            <li><a href="#">Tassimo</a></li>*@
+                    </ul>
+                </div>
+
+            </div>
+
+            <input type="hidden" id="sku" value="@Convert.ToString(ViewBag.Product.sku)" />
+            <input type="hidden" id="title" value="@Convert.ToString(ViewBag.Product.title)" />
+            <input type="hidden" id="description" value="@Convert.ToString(ViewBag.Product.description)" />
+            <input type="hidden" id="price" value="@Convert.ToString(ViewBag.Product.price)" />
+            <input type="hidden" id="size" value="@Convert.ToString(ViewBag.Product.size)" />
+            <input type="hidden" id="id" value="@Convert.ToString(ViewBag.Product.id)" />
+            <div class="add_card">
+                <div>
+                    <div><img src="~/images/products/add_card.jpg" width="209" height="262" alt=""></div>
+                    <div><img src="~/images/products/add_card.jpg"></div>
+                    <div><img src="~/images/products/add_card.jpg"></div>
+
+                </div>
+                <div style="overflow-y:auto; text-align:left;">
+                    @if (Convert.ToString(ViewBag.Product.sku) != "")
+                    {
+                    <p></p><h3 style="text-align:right;"> SKU : @Convert.ToString(ViewBag.Product.sku)</h3><p></p>
+                    }
+                    <h2>@Convert.ToString(ViewBag.Product.title)</h2>
+                    <h2 style="font-size:15px;">About</h2>
+                    <p>
+                        @Html.Raw(@Convert.ToString(ViewBag.Product.description))
+                    </p>
+                    <br />
+                    <hr />
+                    <br />
+                    <div style="bottom:10px; border:none; margin-left:-5px; width:100%;">
+
+                        <table width="100%" style="border-collapse: collapse; padding:5px; border: 1px solid black;
+    height:40px;">
+                            <tr>
+                                <td style="border:solid 1px black;">
+                                    Brand Name
+                                </td>
+                                <td style="border:solid 1px black;">
+                                    @Convert.ToString(ViewBag.Product.band_name)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:solid 1px black;">
+                                    Price
+                                </td>
+                                <td style="border:solid 1px black;">
+                                    $@Convert.ToString(ViewBag.Product.price)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:solid 1px black;">
+                                    Size
+                                </td>
+                                <td style="border:solid 1px black;">
+                                    @Convert.ToString(ViewBag.Product.size)
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    @*<p>
+                            Suchard Hot Cocoa T-Disc refills for your single serve hot beverage machine allow you to enjoy a single cup of delicious Suchard hot chocolate with just the push of a button. Every mug you produce from these elegant single serving hot cocoa refills by Suchard will be creamy and decadent . Suchard Hot Chocolate Tassimo T-Discs are an elegant way to enjoy your coffee while eliminating the mess and hassle of more traditional coffee brewing methods.
+                        </p>*@
+
+                </div>
+                <p ng-hide="cartList.length>0" style="color:blue; font-size:18px; margin-left:20px;">Your Cart is empty !</p>
+                <table width="96%" border="0" style="padding:10px; margin-bottom:20px; float:right;">
+                    <tbody>
+                        <tr>
+                            <td width="340px" align="left">
+                                <h3>Pre Ordered Items :</h3>
+                            @*<img src="~/images/products/instock.png" width="101" height="34" alt="">*@
+                            </td>
+                            <td align="right">
+                                <a href="javascript:void(0)" ng-click="addToCart();">
+                                    <img src="~/images/add_card.png" width="172" height="48" alt="">
+                                </a>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                 <table class="table bg_grey" ng-show="cartList.length>0" style="padding:10px; width:97% !important; margin-bottom:20px; float:right; text-align:left;">
+                    <tbody>
+                        <tr>
+                            <th>Item </th>
+                            
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Update</th>
+                            <th>Remove</th>
+                        </tr>
+
+                        <tr ng-repeat="d in cartList">
+                            <td>{{d.Title}}</td>
+                            
+                            <td>{{d.Size}}</td>
+                            <td>${{d.Price}}</td>
+                            <td>
+                                
+                                <input type="number" style="width:40px;"   min="1"   ng-model="quantity" value="{{d.Quantity}}" />
+                                 
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)" ng-click="updateCart(d.ID,quantity)">Update</a>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)" ng-click="removeCart(d.ID)">Remove</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                
+
+
+
+
+            </div>
+
+
+            <div class="product_item">
+
+
+                <div>
+                    <div> <img src="~/images/products/01.jpg" width="154" height="158" alt=""></div>
+                    <ul class="pro_box">
+                        <li>
+
+                            <a href="#"><span> <img src="~/images/card.png" width="15" height="12" alt=""> Add to cart<br>     Product ID 9010</span></a>
+                        </li>
+                        <li class="bg_grey"><h3>Suchard Hot Chocolate Syrup</h3></li>
+
+                    </ul>
+
+
+                </div>
+                <div>
+                    <div> <img src="~/images/products/01.jpg" width="154" height="158" alt=""></div>
+                    <ul class="pro_box">
+                        <li>
+
+                            <a href="#"><span> <img src="images/card.png" width="15" height="12" alt=""> Add to cart<br>     Product ID 9010</span></a>
+                        </li>
+                        <li class="bg_grey"><h3>Suchard Hot Chocolate Syrup</h3></li>
+
+                    </ul>
+
+
+                </div>
+                <div>
+                    <div> <img src="~/images/products/01.jpg" width="154" height="158" alt=""></div>
+                    <ul class="pro_box">
+                        <li>
+
+                            <a href="#"><span> <img src="~/images/card.png" width="15" height="12" alt=""> Add to cart<br>     Product ID 9010</span></a>
+                        </li>
+                        <li class="bg_grey"><h3>Suchard Hot Chocolate Syrup</h3></li>
+
+                    </ul>
+
+
+                </div>
+
+                @*<ul class="pagination">
+                        <li><a href="#">&lt; Back</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">Next &gt;</a></li>
+                    </ul>*@
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+$(document).ready(function(){
+    $("#clicktab").click(function(){
+        $("#ontab").slideToggle();
+    });
+});
+</script>
+
+<script type="text/javascript">
+    var get_params = function (search_string) {
+
+        var parse = function (params, pairs) {
+            var pair = pairs[0];
+            var parts = pair.split('=');
+            var key = decodeURIComponent(parts[0]);
+            var value = decodeURIComponent(parts.slice(1).join('='));
+
+            // Handle multiple parameters of the same name
+            if (typeof params[key] === "undefined") {
+                params[key] = value;
+            } else {
+                params[key] = [].concat(params[key], value);
+            }
+
+            return pairs.length == 1 ? params : parse(params, pairs.slice(1))
+        }
+
+        // Get rid of leading ?
+        return search_string.length == 0 ? {} : parse({}, search_string.substr(1).split('&'));
+    }
+
+
+    //
+                var PARAMS= get_params(location.search);
+                var searchText = PARAMS['q'];
+                var sortValue = PARAMS['sort'];
+
+               // $("#q").val(searchText);
+                $("#ddlSort").val(sortValue);
+
+                var prePart = window.location.protocol + "//" + window.location.host + window.location.pathname
+                var postPart = location.search;
+                var str = prePart + postPart;
+                function search() {
+
+                    //  alert(prePart + postPart);
+
+                    var queryString = $("#q").val();
+                   // + "&q=" + queryString;
+                    var n = str.search("&q=");
+
+                    if(n<0)
+                        window.location.href = prePart + postPart + "&q=" + queryString;
+                    else {
+
+                        var params = get_params(location.search);
+                        var value = params['q'];
+
+                        str = str.replace(value, queryString);
+
+                        window.location.href = str;
+                    }
+
+                }
+                function sort() {
+
+                    var queryString = $("#ddlSort").val();
+                    var n = str.search("&sort=");
+                    if (n < 0)
+                        window.location.href = prePart + postPart + "&sort=" + queryString;
+                    else {
+
+                        var params = get_params(location.search);
+                        var value = params['sort'];
+
+                        str = str.replace(value, queryString);
+
+                        window.location.href = str;
+                    }
+
+
+                }
+
+</script>
+
+
+

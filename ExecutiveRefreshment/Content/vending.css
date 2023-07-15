@@ -1,0 +1,362 @@
+html, body {
+    height: 100%;
+    overflow-x:hidden;
+
+
+}
+*{
+  z-index: 2;
+}
+.bg-vending {
+    margin-top: -310px;
+    padding: 0px;
+    background: url("images/bg-vending.png") no-repeat center center;
+    height: 1080px;
+
+}
+.header2 h3{
+font-family: Montserrat-Bold;
+text-align: center;
+color: #603524;
+font-size: 30px;
+letter-spacing: 5px;
+margin-top: 8%;
+margin-bottom:-3%;
+}
+
+
+
+
+
+
+.container p{
+  color:#595959;
+  text-align:justify;
+  text-justify:inter-word;
+  font-size:22pt;
+  font-family: Arvo-Regular;
+  margin-top: 12%;
+
+
+}
+.container{
+  float: none;
+    margin: auto;
+    max-width:100%;
+    display:block;
+    width: 980px;
+    text-align: center;
+
+}
+
+
+#contactUsVending {
+    background: url("images/contactUs-vending.png") no-repeat center center;
+    height: 283px;
+
+    margin-bottom: 70px;
+    text-align: center;
+    margin:auto;
+    margin-top: 130px;
+    margin-bottom: 120px;
+    z-index: 1;
+    position: relative;
+
+}
+#contactUsVending h3 {
+    font-family: Arvo-Bold;
+    text-align: center;
+    color: #fff;
+    font-size: 48px;
+    letter-spacing: 5px;
+    padding-top: 50px;
+
+}
+
+#contactUsVending p {
+    font-family: Arvo-Regular;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    margin-top: 0px;
+
+}
+
+.lMore {
+    background-color: transparent;
+    border-radius: 0px;
+    border: 2px solid #fff;
+    width: 303px;
+    height: 58px;
+    font-family: Montserrat-Bold;
+    font-size: 18px;
+    line-height: 38px;
+    margin-top: 20px;
+
+
+}
+.cips{
+  z-index: -1;
+  margin:auto;
+  text-align: center;
+  margin-top:-650px;
+  margin-left:-450px;
+  position: relative;
+}
+.lMore:hover {
+    background-color: #fff;
+    color: #603524;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border: 2px solid #fff;
+
+}
+
+.bg-vending h1 {
+    font-family: Montserrat-Bold;
+    margin-left: 25%;
+    padding-top: 27.5%;
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 5px;
+
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+}
+.row_images{
+  vertical-align: center;
+  margin:auto;
+}
+.pictures{
+  vertical-align: center;
+  margin:auto;
+  text-align: center;
+}
+.second{
+  margin-top:-12px;
+}
+.third{
+  margin-left: -20%;
+}
+
+.refButt {
+    background-color: #4ebfcc;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 6px solid #3d8088;
+    width: 460px;
+    height: 84px;
+    font-family: Montserrat-Bold;
+    font-size: 30px;
+    line-height: 69px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.refButt:hover {
+    background-color: #3d8088;
+    border-bottom: 6px solid #4ebfcc;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+
+.row_images1{
+  vertical-align: center;
+  margin: auto;
+  text-align: center;
+
+}
+#bgSnacksGl2 {
+    width: 900px;
+    margin: auto;
+    height: auto;
+    text-align: center;
+    float: none;
+    max-width:100%;
+    display:block;
+    margin-top:-4%;
+}
+
+#store {
+    background: url("images/store-bg.png") no-repeat center center;
+    height: 570px;
+    text-align: center;
+    margin-top: 200px;
+}
+
+#store img {
+    margin-top: 0px;
+    margin-left: -5%;
+}
+
+#store h3 {
+    font-family: Montserrat-ExtraBold;
+    font-size: 50px;
+    color: #fff;
+    padding-top: 30px;
+    letter-spacing: 4px;
+    text-align: right;
+}
+
+#store h6 {
+    font-family: Montserrat-Regular;
+    font-size: 32px;
+    color: #fff;
+    text-align: right;
+    letter-spacing: 3px;
+}
+
+.lMore2 {
+    background-color: #ffdd41;
+    border-radius: 0px;
+    border: none;
+    width: 303px;
+    height: 58px;
+    font-family: Montserrat-Bold;
+    font-size: 18px;
+    line-height: 45px;
+    margin-top: 20px;
+    color: #222222;
+}
+
+.lMore2:hover {
+    background-color: #fff;
+    color: #603524;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border: 2px solid #fff;
+}
+
+.buttLM {
+    text-align: right;
+    margin-top: -60px;
+}
+
+}
+@media (min-width: 1200px) {
+html, body {overflow-x:hidden;
+}
+.first1{
+  margin-left: 30%;
+
+}
+.second2{
+  margin-left: 45%;
+}
+.third3{
+  margin-left: 35%;
+}
+.forth4{
+  margin-left: 15%;
+}
+.fifth5{
+  margin-left: 30%;
+}
+.bg-vending h1 {
+    margin-left: 50px;
+    padding: 150px;
+    font-size: 16px;
+    padding-right: 20px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
+html, body {overflow-x:hidden;
+}
+#top .logooo{
+  margin-left:-0.2%;
+  margin-bottom: -10%;
+}
+
+    .text {
+        margin: 0px;
+        padding: 0px;
+        margin-left: 10%;
+    }
+
+    .buttonsCl {
+        margin: 0px;
+        padding: 0px;
+        margin-left: 10%;
+    }
+
+    .bg-vending h1 {
+        margin-left: 50px;
+        padding: 150px;
+        font-size: 20px;
+        padding-right: 20px;
+
+    }
+
+    .col-md-2 img {
+
+    }
+
+    .footerSl p {
+        font-size: 10px;
+    }
+
+    .bg-vending {
+    margin: -20px;
+    margin-top: -120px;
+    background: url("images/bg-vending.png") no-repeat center center;
+    height: 370px;
+    background-size: 100%;
+
+
+    }
+
+    .refButt {
+        margin-top: 10px;
+        padding: 0px;
+        padding-right: 10px;
+        text-align: center;
+        width: 98%
+    }
+    .contactUsVending{
+      height: 300px;
+    }
+    #bgSnacksGl2 h3{
+      font-size: 25px;
+    }
+    #bgSnacksGl2 h6{
+      font-size: 20px;
+    }
+    #bgSnacksGl2 .buttLM{
+      margin-top: 15%;
+      margin-right: 7.5%;
+    }
+    #bgSnacksGl2 .img-responsive{
+       height: 200px;
+       margin:auto;
+       text-align: center;
+       margin-top: 5%;
+    }
+    #contactUsVending{
+      height: 380px;
+}
+    .container p{
+      font-size: 18px;
+      margin-top: 35%;
+}
+
+  .bg-vending {
+     background-size: 690px;
+     margin-left: 0px;
+  }
+   .text{
+     margin-bottom: -10%;
+   }
+   .cips{
+     display: none;
+   }
+   .header2{
+     margin-bottom: -25%;
+     margin-top:25%;
+   }
+  }

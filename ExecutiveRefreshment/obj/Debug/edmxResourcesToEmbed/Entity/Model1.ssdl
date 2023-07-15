@@ -1,0 +1,1296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ecommerce2Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="session_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address" Type="text" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="zip" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ListID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EditSequence" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cronlog">
+    <Key>
+      <PropertyRef Name="CLID" />
+    </Key>
+    <Property Name="CLID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="RentalId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" Precision="0" />
+    <Property Name="Mode" Type="varchar" MaxLength="10" />
+    <Property Name="TxnId" Type="varchar" MaxLength="200" />
+    <Property Name="FinalOrderId" Type="int" />
+    <Property Name="Res" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="cronlogsus">
+    <Key>
+      <PropertyRef Name="CLSId" />
+    </Key>
+    <Property Name="CLSId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="255" />
+    <Property Name="EntryDate" Type="datetime" Precision="0" />
+    <Property Name="Res" Type="varchar" MaxLength="10" />
+    <Property Name="CLID" Type="int" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="company" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="longtext" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="zipcode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="profile" Type="text" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="cust_com_l" Type="longtext" Nullable="false" />
+    <Property Name="res_list_id" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="customer_invoicing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="damaged_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pro_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="how_it_happen" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="who_is_responsible" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="submitter" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="type_d" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value_d" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="rep_sub_name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="l_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address2" Type="text" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="zip" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="licence" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="inactive" Type="bigint" Nullable="false" />
+    <Property Name="truck" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="security_question" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="security_answer" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exp_date" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dob" Type="date" Nullable="false" />
+    <Property Name="photo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="home_phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="hire_dt" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver_final_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="bigint" Nullable="false" />
+    <Property Name="tax" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="total_amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="paid_on" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="delievery_status" Type="enum" Nullable="false" />
+    <Property Name="payment_status" Type="enum" Nullable="false" />
+    <Property Name="order_date" Type="date" Nullable="false" />
+    <Property Name="sign" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="order_updated" Type="bigint" Nullable="false" />
+    <Property Name="quickbook_invoice_check" Type="int" Nullable="false" />
+    <Property Name="quickbook_payment_check" Type="int" Nullable="false" />
+    <Property Name="qb_o_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="po" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="truck_no" Type="varchar" MaxLength="225" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver_final_order_dtls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cart_id" Type="bigint" Nullable="false" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price_update" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver_final_order_dtls_temp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cart_id" Type="varchar" MaxLength="255" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price_update" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_module">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="truck" Type="int" Nullable="false" />
+    <Property Name="truck_add" Type="int" Nullable="false" />
+    <Property Name="truck_edit" Type="int" Nullable="false" />
+    <Property Name="truck_delete" Type="int" Nullable="false" />
+    <Property Name="driver" Type="int" Nullable="false" />
+    <Property Name="driver_add" Type="int" Nullable="false" />
+    <Property Name="driver_edit" Type="int" Nullable="false" />
+    <Property Name="driver_delete" Type="int" Nullable="false" />
+    <Property Name="inventory" Type="int" Nullable="false" />
+    <Property Name="inventory_add" Type="int" Nullable="false" />
+    <Property Name="inventory_edit" Type="int" Nullable="false" />
+    <Property Name="inventory_delete" Type="int" Nullable="false" />
+    <Property Name="order" Type="int" Nullable="false" />
+    <Property Name="order_add" Type="int" Nullable="false" />
+    <Property Name="order_edit" Type="int" Nullable="false" />
+    <Property Name="order_delete" Type="int" Nullable="false" />
+    <Property Name="invoice" Type="int" Nullable="false" />
+    <Property Name="invoice_add" Type="int" Nullable="false" />
+    <Property Name="invoice_edit" Type="int" Nullable="false" />
+    <Property Name="invoice_delete" Type="int" Nullable="false" />
+    <Property Name="customer" Type="int" Nullable="false" />
+    <Property Name="customer_add" Type="int" Nullable="false" />
+    <Property Name="customer_edit" Type="int" Nullable="false" />
+    <Property Name="customer_delete" Type="int" Nullable="false" />
+    <Property Name="order_qb" Type="bigint" Nullable="false" />
+    <Property Name="invoice_qb" Type="bigint" Nullable="false" />
+    <Property Name="customer_qb" Type="bigint" Nullable="false" />
+    <Property Name="emp" Type="int" Nullable="false" />
+    <Property Name="emp_add" Type="int" Nullable="false" />
+    <Property Name="emp_edit" Type="int" Nullable="false" />
+    <Property Name="emp_delete" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_module_driver">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="my_profile" Type="int" Nullable="false" />
+    <Property Name="my_profile_add" Type="int" Nullable="false" />
+    <Property Name="my_profile_edit" Type="int" Nullable="false" />
+    <Property Name="my_profile_delete" Type="int" Nullable="false" />
+    <Property Name="order_dtl" Type="int" Nullable="false" />
+    <Property Name="order_dtl_add" Type="int" Nullable="false" />
+    <Property Name="order_dtl_edit" Type="int" Nullable="false" />
+    <Property Name="order_dtl_delete" Type="int" Nullable="false" />
+    <Property Name="truck_inventory" Type="int" Nullable="false" />
+    <Property Name="truck_inventory_add" Type="int" Nullable="false" />
+    <Property Name="truck_inventory_edit" Type="int" Nullable="false" />
+    <Property Name="truck_inventory_delete" Type="int" Nullable="false" />
+    <Property Name="inventory" Type="int" Nullable="false" />
+    <Property Name="inventory_add" Type="int" Nullable="false" />
+    <Property Name="inventory_edit" Type="int" Nullable="false" />
+    <Property Name="inventory_delete" Type="int" Nullable="false" />
+    <Property Name="add_order" Type="int" Nullable="false" />
+    <Property Name="add_order_add" Type="int" Nullable="false" />
+    <Property Name="add_order_edit" Type="int" Nullable="false" />
+    <Property Name="add_order_delete" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_state">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="state_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="dt_welcome">
+    <Key>
+      <PropertyRef Name="title" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="icon" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="chk_value" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="url" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="edit_module">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="category" Type="int" Nullable="false" />
+    <Property Name="inventory" Type="int" Nullable="false" />
+    <Property Name="user_setup" Type="int" Nullable="false" />
+    <Property Name="purchase" Type="int" Nullable="false" />
+    <Property Name="customer_rentals" Type="int" Nullable="false" />
+    <Property Name="return_tool" Type="int" Nullable="false" />
+    <Property Name="mobile_tool" Type="int" Nullable="false" />
+    <Property Name="tax" Type="int" Nullable="false" />
+    <Property Name="exchange" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="email_attach">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="image_name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="failedorders">
+    <Key>
+      <PropertyRef Name="FOId" />
+    </Key>
+    <Property Name="FOId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntryDate" Type="datetime" Precision="0" />
+    <Property Name="Mode" Type="varchar" MaxLength="5" />
+    <Property Name="FinalOrderDetails_CartId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="final_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="bigint" Nullable="false" />
+    <Property Name="tax" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="total_amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="paid_on" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="delievery_status" Type="enum" Nullable="false" />
+    <Property Name="payment_status" Type="enum" Nullable="false" />
+    <Property Name="order_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="sign" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="order_updated" Type="bigint" Nullable="false" />
+    <Property Name="quickbook_invoice_check" Type="int" Nullable="false" />
+    <Property Name="quickbook_payment_check" Type="int" Nullable="false" />
+    <Property Name="qb_o_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="po" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="comment" Type="longtext" Nullable="false" />
+    <Property Name="send" Type="int" Nullable="false" />
+    <Property Name="invoice" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="bigint" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="fs" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="get_id_r" Type="bigint" Nullable="false" />
+    <Property Name="TxnId" Type="varchar" MaxLength="255" />
+    <Property Name="EditSequence" Type="varchar" MaxLength="255" />
+    <Property Name="rental_check" Type="bigint" Nullable="false" />
+    <Property Name="from_customer" Type="bigint" Nullable="false" />
+    <Property Name="rental_from" Type="date" />
+    <Property Name="rental_to" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="final_order_dtls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cart_id" Type="bigint" Nullable="false" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price_update" Type="int" Nullable="false" />
+    <Property Name="pending_qty" Type="bigint" Nullable="false" />
+    <Property Name="minus_qty" Type="bigint" Nullable="false" />
+    <Property Name="left_qty" Type="bigint" Nullable="false" />
+    <Property Name="original" Type="bigint" Nullable="false" />
+    <Property Name="TxnLineId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EditSequence" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="final_order_dtls_temp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cart_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price_update" Type="int" Nullable="false" />
+    <Property Name="pending_qty" Type="bigint" Nullable="false" />
+    <Property Name="minus_qty" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="logo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="service_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="home_status" Type="enum" Nullable="false" />
+  </EntityType>
+  <EntityType Name="logo_pages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="page" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="service_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+  </EntityType>
+  <EntityType Name="manage_rentals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="invoice_date" Type="date" Nullable="false" />
+    <Property Name="lease_no" Type="bigint" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="zipcode" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="publish" Type="bigint" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="invoice_period" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="invoice_start_date" Type="date" Nullable="false" />
+    <Property Name="next_invoice" Type="date" Nullable="false" />
+    <Property Name="tax" Type="decimal" Precision="10" Scale="3" Nullable="false" />
+    <Property Name="check_tax" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email_date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="po" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="latitude" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="longitude" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="truck_id" Type="bigint" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="newsletter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="added_on" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="start_dt" Type="date" Nullable="false" />
+    <Property Name="end_dt" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="noti_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="check_val" Type="bigint" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="payment_type" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cheque_no" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cheque_dtl" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cash_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cash_phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cc_number" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cc_type" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cc_user_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="expiry_date" Type="date" Nullable="false" />
+    <Property Name="total_amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payment_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="order_id" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pre_final_order_dtls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="bigint" Nullable="false" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price_update" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cust_p" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="pro_title" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pre_final_order_dtls_tmp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sale_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="design_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price_update" Type="int" Nullable="false" />
+    <Property Name="comment" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cust_p" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="pro_title" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.ecommerce2.product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="cat_id" />
+      <PropertyRef Name="company_id" />
+      <PropertyRef Name="band_name" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="product_logo" />
+      <PropertyRef Name="small_image" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="size" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="stock_status" />
+      <PropertyRef Name="photo1" />
+      <PropertyRef Name="photo2" />
+      <PropertyRef Name="photo3" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="typo" />
+      <PropertyRef Name="website" />
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="sku" />
+      <PropertyRef Name="left_menu" />
+      <PropertyRef Name="quantity" />
+      <PropertyRef Name="check_tax" />
+      <PropertyRef Name="tax" />
+      <PropertyRef Name="minquantity" />
+      <PropertyRef Name="res_list_id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="service_id" Type="int" Nullable="false" />
+    <Property Name="cat_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="company_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="band_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="product_logo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="small_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="stock_status" Type="enum" Nullable="false" />
+    <Property Name="photo1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="photo2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="photo3" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="typo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="website" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="item_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sku" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="left_menu" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="check_tax" Type="int" Nullable="false" />
+    <Property Name="tax" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="minquantity" Type="bigint" Nullable="false" />
+    <Property Name="res_list_id" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.ecommerce2.product_old' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="product_old">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="cat_id" />
+      <PropertyRef Name="company_id" />
+      <PropertyRef Name="band_name" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="product_logo" />
+      <PropertyRef Name="small_image" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="size" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="stock_status" />
+      <PropertyRef Name="photo1" />
+      <PropertyRef Name="photo2" />
+      <PropertyRef Name="photo3" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="typo" />
+      <PropertyRef Name="website" />
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="sku" />
+      <PropertyRef Name="left_menu" />
+      <PropertyRef Name="quantity" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="service_id" Type="int" Nullable="false" />
+    <Property Name="cat_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="company_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="band_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="product_logo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="small_image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="stock_status" Type="enum" Nullable="false" />
+    <Property Name="photo1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="photo2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="photo3" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="typo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="website" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="item_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="sku" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="left_menu" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="product_user_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="promo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="promo_code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="start_date" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="end_date" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="qblog">
+    <Key>
+      <PropertyRef Name="QBLogId" />
+    </Key>
+    <Property Name="QBLogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="Successful" Type="varchar" MaxLength="100" />
+    <Property Name="Message" Type="varchar" MaxLength="2000" />
+    <Property Name="Error" Type="varchar" MaxLength="100" />
+    <Property Name="Errors" Type="varchar" MaxLength="2000" />
+    <Property Name="Response" Type="text" />
+    <Property Name="ResponseCode" Type="varchar" MaxLength="100" />
+    <Property Name="EntryDate" Type="datetime" Precision="0" />
+    <Property Name="InvoiceNumber" Type="varchar" MaxLength="100" />
+    <Property Name="Mode" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="qblog_customer">
+    <Key>
+      <PropertyRef Name="QBCLogId" />
+    </Key>
+    <Property Name="QBCLogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="Successful" Type="varchar" MaxLength="100" />
+    <Property Name="Message" Type="varchar" MaxLength="2000" />
+    <Property Name="Error" Type="varchar" MaxLength="100" />
+    <Property Name="Errors" Type="varchar" MaxLength="2000" />
+    <Property Name="Response" Type="text" />
+    <Property Name="EntryDate" Type="datetime" Precision="0" />
+    <Property Name="Mode" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="qblog_inventory">
+    <Key>
+      <PropertyRef Name="QBILogId" />
+    </Key>
+    <Property Name="QBILogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="Successful" Type="varchar" MaxLength="100" />
+    <Property Name="Message" Type="varchar" MaxLength="2000" />
+    <Property Name="Error" Type="varchar" MaxLength="100" />
+    <Property Name="Errors" Type="varchar" MaxLength="2000" />
+    <Property Name="Response" Type="text" />
+    <Property Name="EntryDate" Type="datetime" Precision="0" />
+    <Property Name="Mode" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="quickbooks_config">
+    <Key>
+      <PropertyRef Name="quickbooks_config_id" />
+    </Key>
+    <Property Name="quickbooks_config_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="qb_username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="module" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="cfgkey" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="cfgval" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="cfgtype" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="cfgopts" Type="text" Nullable="false" />
+    <Property Name="write_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="mod_datetime" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_log">
+    <Key>
+      <PropertyRef Name="quickbooks_log_id" />
+    </Key>
+    <Property Name="quickbooks_log_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="quickbooks_ticket_id" Type="uint" />
+    <Property Name="batch" Type="uint" Nullable="false" />
+    <Property Name="msg" Type="text" Nullable="false" />
+    <Property Name="log_datetime" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_oauth">
+    <Key>
+      <PropertyRef Name="quickbooks_oauth_id" />
+    </Key>
+    <Property Name="quickbooks_oauth_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="app_username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="app_tenant" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="oauth_request_token" Type="varchar" MaxLength="255" />
+    <Property Name="oauth_request_token_secret" Type="varchar" MaxLength="255" />
+    <Property Name="oauth_access_token" Type="varchar" MaxLength="255" />
+    <Property Name="oauth_access_token_secret" Type="varchar" MaxLength="255" />
+    <Property Name="qb_realm" Type="varchar" MaxLength="32" />
+    <Property Name="qb_flavor" Type="varchar" MaxLength="12" />
+    <Property Name="qb_user" Type="varchar" MaxLength="64" />
+    <Property Name="request_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="access_datetime" Type="datetime" Precision="0" />
+    <Property Name="touch_datetime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="quickbooks_queue">
+    <Key>
+      <PropertyRef Name="quickbooks_queue_id" />
+    </Key>
+    <Property Name="quickbooks_queue_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="quickbooks_ticket_id" Type="uint" />
+    <Property Name="qb_username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="qb_action" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="ident" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="extra" Type="text" />
+    <Property Name="qbxml" Type="text" />
+    <Property Name="priority" Type="uint" />
+    <Property Name="qb_status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="msg" Type="text" />
+    <Property Name="enqueue_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="dequeue_datetime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="quickbooks_recur">
+    <Key>
+      <PropertyRef Name="quickbooks_recur_id" />
+    </Key>
+    <Property Name="quickbooks_recur_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="qb_username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="qb_action" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="ident" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="extra" Type="text" />
+    <Property Name="qbxml" Type="text" />
+    <Property Name="priority" Type="uint" />
+    <Property Name="run_every" Type="uint" Nullable="false" />
+    <Property Name="recur_lasttime" Type="uint" Nullable="false" />
+    <Property Name="enqueue_datetime" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_ticket">
+    <Key>
+      <PropertyRef Name="quickbooks_ticket_id" />
+    </Key>
+    <Property Name="quickbooks_ticket_id" Type="uint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="qb_username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ticket" Type="guid" Nullable="false" />
+    <Property Name="processed" Type="uint" />
+    <Property Name="lasterror_num" Type="varchar" MaxLength="32" />
+    <Property Name="lasterror_msg" Type="varchar" MaxLength="255" />
+    <Property Name="ipaddr" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="write_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="touch_datetime" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_user">
+    <Key>
+      <PropertyRef Name="qb_username" />
+    </Key>
+    <Property Name="qb_username" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="qb_password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="qb_company_file" Type="varchar" MaxLength="255" />
+    <Property Name="qbwc_wait_before_next_update" Type="uint" />
+    <Property Name="qbwc_min_run_every_n_seconds" Type="uint" />
+    <Property Name="status" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="write_datetime" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="touch_datetime" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rentals_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rental_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="item_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="item_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cust_rent" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="term" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rental_start_date" Type="date" Nullable="false" />
+    <Property Name="rental_end_date" Type="date" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="revised_invoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="invoice_no_old" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="invoice_no_new" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sent_mail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="longtext" Nullable="false" />
+    <Property Name="sub" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="message" Type="longtext" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rank" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="shipping_address">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cart_id" Type="bigint" Nullable="false" />
+    <Property Name="user_id" Type="bigint" Nullable="false" />
+    <Property Name="session_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fname_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="lname_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="address1_ship" Type="text" Nullable="false" />
+    <Property Name="address2_ship" Type="text" Nullable="false" />
+    <Property Name="city_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="state_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pin_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="country_ship" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="name_sender" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="email_sender" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address1_sender" Type="text" Nullable="false" />
+    <Property Name="address2_sender" Type="text" Nullable="false" />
+    <Property Name="city_sender" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="state_sender" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pin_sender" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="phone_sender" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="country_sender" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sub_service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_id" Type="bigint" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="photo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="video" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="added_on" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+    <Property Name="radio" Type="enum" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subscribe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="truck_no" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="made" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="model" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="year" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="mileage" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="purchased_from" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="zip" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="company_cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="purchased_date" Type="date" Nullable="false" />
+    <Property Name="condition" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="photo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="longtext" Nullable="false" />
+    <Property Name="inactive" Type="bigint" Nullable="false" />
+    <Property Name="date" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="lp" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="vin" Type="varchar" MaxLength="225" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="truck_id" Type="bigint" Nullable="false" />
+    <Property Name="driver_id" Type="bigint" Nullable="false" />
+    <Property Name="shipping_date" Type="date" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="status" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_inventory_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="truck_inventory_id" Type="bigint" Nullable="false" />
+    <Property Name="service" Type="bigint" Nullable="false" />
+    <Property Name="category" Type="bigint" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="quantity" Type="bigint" Nullable="false" />
+    <Property Name="customer_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_maintenance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="out_of_service" Type="bigint" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="comment" Type="longtext" Nullable="false" />
+    <Property Name="mileage" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="m_date" Type="date" Nullable="false" />
+    <Property Name="m_type" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="service_company" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="zip" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="paid_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="m_by" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="m_comment" Type="longtext" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="truck_id" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="truck_id" Type="bigint" Nullable="false" />
+    <Property Name="driver_id" Type="bigint" Nullable="false" />
+    <Property Name="shipping_date" Type="date" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_order_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="truck_order_id" Type="bigint" Nullable="false" />
+    <Property Name="order_id" Type="bigint" Nullable="false" />
+    <Property Name="user_id" Type="bigint" Nullable="false" />
+    <Property Name="total_amount" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="order_date" Type="date" Nullable="false" />
+    <Property Name="truck_id" Type="bigint" Nullable="false" />
+    <Property Name="driver_id" Type="bigint" Nullable="false" />
+    <Property Name="shipping_date" Type="date" Nullable="false" />
+    <Property Name="status" Type="enum" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="f_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="l_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="address2" Type="text" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="zip" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="place" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="publish" Type="int" Nullable="false" />
+    <Property Name="photo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="shop_id" Type="int" Nullable="false" />
+    <Property Name="num_list" Type="int" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pin" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="merchant_acct" Type="enum" Nullable="false" />
+    <Property Name="auth_login_id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="auth_trans_key" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="company" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contact_name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contact_position" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contact_email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="contact_phone" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="qb_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="quickbook_check" Type="int" Nullable="false" />
+    <Property Name="customer_invoice" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="fax" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="fs" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="master_cust" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="billing_address" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="billing_address2" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ChainStoreNum" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="Area" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="CreditClass" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="CreditLimt" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="TaxAuth" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="TaxStatus" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="PriceList" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="DateLastDelv" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="HHinvoiceCopies" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="Business" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="Acquisition" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="PurchOrder" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="NextDelvDate" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="quickbooks_listid" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="quickbooks_editsequence" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="quickbooks_errnum" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="quickbooks_errmsg" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ListID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EditSequence" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="check_tax" Type="bigint" Nullable="false" />
+    <Property Name="cust_com_l" Type="longtext" />
+    <Property Name="res_list_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="po_no" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_hit_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="page" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="ip_address" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="hit_count" Type="bigint" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="ind_id" Type="int" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="inactive" Type="int" Nullable="false" />
+    <Property Name="fname" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="lname" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="date_time" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="225" Nullable="false" />
+    <Property Name="tax" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="longtext" Nullable="false" />
+    <Property Name="address2" Type="longtext" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="zip" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="company" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="licence" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="security_question" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="security_answer" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="exp_date" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dob" Type="date" Nullable="false" />
+    <Property Name="photo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="home_phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="hire_dt" Type="date" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vendor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="com_from" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="com_add" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="com_city" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="com_zip" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="com_phone" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="com_qua" Type="bigint" Nullable="false" />
+    <Property Name="com_date" Type="date" Nullable="false" />
+    <Property Name="com_price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="date_time" Type="date" Nullable="false" />
+    <Property Name="product_id" Type="bigint" Nullable="false" />
+    <Property Name="sku" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="pur_name" Type="varchar" MaxLength="225" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vendor_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sku" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="product_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="size" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="qty" Type="bigint" Nullable="false" />
+    <Property Name="cost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="date_time" Type="date" Nullable="false" />
+    <Property Name="pr_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="qty_in" Type="bigint" Nullable="false" />
+    <Property Name="vendor_id" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ecommerce2ModelStoreContainer">
+    <EntitySet Name="cart" EntityType="Self.cart" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="company" EntityType="Self.company" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="content" EntityType="Self.content" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="cronlog" EntityType="Self.cronlog" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="cronlogsus" EntityType="Self.cronlogsus" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="customer_invoicing" EntityType="Self.customer_invoicing" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="damaged_item" EntityType="Self.damaged_item" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="driver" EntityType="Self.driver" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="driver_final_order" EntityType="Self.driver_final_order" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="driver_final_order_dtls" EntityType="Self.driver_final_order_dtls" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="driver_final_order_dtls_temp" EntityType="Self.driver_final_order_dtls_temp" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="dt_module" EntityType="Self.dt_module" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="dt_module_driver" EntityType="Self.dt_module_driver" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="dt_role" EntityType="Self.dt_role" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="dt_state" EntityType="Self.dt_state" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="dt_welcome" EntityType="Self.dt_welcome" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="edit_module" EntityType="Self.edit_module" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="email_attach" EntityType="Self.email_attach" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="failedorders" EntityType="Self.failedorders" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="final_order" EntityType="Self.final_order" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="final_order_dtls" EntityType="Self.final_order_dtls" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="final_order_dtls_temp" EntityType="Self.final_order_dtls_temp" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="logo" EntityType="Self.logo" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="logo_pages" EntityType="Self.logo_pages" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="manage_rentals" EntityType="Self.manage_rentals" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="map" EntityType="Self.map" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="newsletter" EntityType="Self.newsletter" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="noti_user" EntityType="Self.noti_user" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="payment" EntityType="Self.payment" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="payment_order" EntityType="Self.payment_order" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="pre_final_order_dtls" EntityType="Self.pre_final_order_dtls" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="pre_final_order_dtls_tmp" EntityType="Self.pre_final_order_dtls_tmp" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="product_user_price" EntityType="Self.product_user_price" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="promo" EntityType="Self.promo" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="qblog" EntityType="Self.qblog" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="qblog_customer" EntityType="Self.qblog_customer" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="qblog_inventory" EntityType="Self.qblog_inventory" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_config" EntityType="Self.quickbooks_config" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_log" EntityType="Self.quickbooks_log" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_oauth" EntityType="Self.quickbooks_oauth" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_queue" EntityType="Self.quickbooks_queue" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_recur" EntityType="Self.quickbooks_recur" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_ticket" EntityType="Self.quickbooks_ticket" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="quickbooks_user" EntityType="Self.quickbooks_user" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="rentals_item" EntityType="Self.rentals_item" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="revised_invoice" EntityType="Self.revised_invoice" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="sent_mail" EntityType="Self.sent_mail" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="service" EntityType="Self.service" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="service_menu" EntityType="Self.service_menu" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="shipping_address" EntityType="Self.shipping_address" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="sub_service" EntityType="Self.sub_service" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="subscribe" EntityType="Self.subscribe" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="truck" EntityType="Self.truck" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="truck_inventory" EntityType="Self.truck_inventory" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="truck_inventory_product" EntityType="Self.truck_inventory_product" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="truck_maintenance" EntityType="Self.truck_maintenance" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="truck_order" EntityType="Self.truck_order" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="truck_order_item" EntityType="Self.truck_order_item" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="user_hit_status" EntityType="Self.user_hit_status" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="vendor" EntityType="Self.vendor" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="vendor_item" EntityType="Self.vendor_item" Schema="ecommerce2" store:Type="Tables" />
+    <EntitySet Name="product" EntityType="Self.product" store:Type="Tables" store:Schema="ecommerce2">
+      <DefiningQuery>SELECT
+`product`.`id`, 
+`product`.`service_id`, 
+`product`.`cat_id`, 
+`product`.`company_id`, 
+`product`.`band_name`, 
+`product`.`title`, 
+`product`.`description`, 
+`product`.`product_logo`, 
+`product`.`small_image`, 
+`product`.`price`, 
+`product`.`size`, 
+`product`.`date`, 
+`product`.`status`, 
+`product`.`stock_status`, 
+`product`.`photo1`, 
+`product`.`photo2`, 
+`product`.`photo3`, 
+`product`.`type`, 
+`product`.`typo`, 
+`product`.`website`, 
+`product`.`item_id`, 
+`product`.`sku`, 
+`product`.`left_menu`, 
+`product`.`quantity`, 
+`product`.`check_tax`, 
+`product`.`tax`, 
+`product`.`minquantity`, 
+`product`.`res_list_id`
+FROM `product` AS `product`</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="product_old" EntityType="Self.product_old" store:Type="Tables" store:Schema="ecommerce2">
+      <DefiningQuery>SELECT
+`product_old`.`id`, 
+`product_old`.`service_id`, 
+`product_old`.`cat_id`, 
+`product_old`.`company_id`, 
+`product_old`.`band_name`, 
+`product_old`.`title`, 
+`product_old`.`description`, 
+`product_old`.`product_logo`, 
+`product_old`.`small_image`, 
+`product_old`.`price`, 
+`product_old`.`size`, 
+`product_old`.`date`, 
+`product_old`.`status`, 
+`product_old`.`stock_status`, 
+`product_old`.`photo1`, 
+`product_old`.`photo2`, 
+`product_old`.`photo3`, 
+`product_old`.`type`, 
+`product_old`.`typo`, 
+`product_old`.`website`, 
+`product_old`.`item_id`, 
+`product_old`.`sku`, 
+`product_old`.`left_menu`, 
+`product_old`.`quantity`
+FROM `product_old` AS `product_old`</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

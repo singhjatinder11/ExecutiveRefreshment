@@ -1,0 +1,36 @@
+﻿ @model IEnumerable<ExecutiveRefreshment.Entity.service>
+<ul>
+
+    <li><a href="@Url.Action("AboutUs","Home")">ABOUT US</a></li>
+    <li class="list_menu">
+        <a href="#">SERVICES</a>
+        <ul class="list_style">
+            <li><a href="@Url.Action("BottledAndFilteredWater","Services")">Bottled & Filtered Water</a></li>
+            <li><a href="@Url.Action("Vending","Services")">Vending</a></li>
+            <li><a href="@Url.Action("OfficeCoffeeAndTea","Services")">Office Coffee & Tea</a></li>
+            <li><a href="@Url.Action("RefreshmentsAndSnackes","Services")">Refreshments & Snacks</a></li>
+            <li><a href="@Url.Action("BreakRoomAndJanitorialSupplies","Services")">Breakroom & Janitorial Supplies</a></li>
+            <li><a href="@Url.Action("MicroConventionalStore","Services")">Micro Conventional Store</a></li>
+        </ul>
+    </li>
+    <li class="list_menu">
+        <a href="#">Products</a>
+        <ul class="list_style">
+            @foreach (var menu in Model)
+            {
+                string route = "index?id=" + menu.id + "&title=" + menu.title;
+                <li><a href="@Url.Action("index","product", new {  @id = menu.id, title = menu.title })">@menu.title</a></li>
+            }
+            @*<li><a href="#">Bottled & Filtered Water</a></li>
+            <li><a href="#">Vending</a></li>
+            <li><a href="#">Office Coffee & Tea</a></li>
+            <li><a href="#">Refreshments & Snacks</a></li>
+            <li><a href="#">Breakroom & Janitorial Supplies</a></li>
+            <li><a href="#">Micro Conventional Store</a></li>*@
+        </ul>
+    </li>
+    @*<li><a href="#">PRODUCTS</a></li>*@
+    <li><a href="@Url.Action("Customer","Account")">CUSTOMER</a></li>
+    <li><a href="@Url.Action("ContactUs","Home")">CONTACT US</a></li>
+    <li><a href="@Url.Action("MyCart","Product")">MY CART</a></li>
+</ul>

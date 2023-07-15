@@ -1,0 +1,293 @@
+﻿@model ExecutiveRefreshment.Models.UserModel
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+
+  
+
+@{
+    ViewBag.Title = "Register";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/fonts.css">
+<link rel="stylesheet" type="text/css" href="~/Content/regAndForgPass.css">
+ 
+<style type="text/css">
+    .validation-summary-errors ul, li {list-style-type: none;}
+
+ .validation-summary-errors li {padding-left: 2em; text-indent: -2em; color:red;   font-weight:bold; }
+
+    .validation-summary-errors {
+    background-color: #dfe7e9;
+    border:1px solid red;
+    width: 100%;
+    }
+span.validation-summary-errors {
+    border-bottom-color: #D9FFB2;
+    display:block;
+    }
+ul.validation-summary-errors {
+    margin:0;
+    padding:0;
+    border-top:none;
+    }
+</style>
+ 
+<div class="well pTitle">
+    <h1 style="font-size:30px;">NEW USER REGISTRATION</h1>
+</div>
+<div id="containeer">
+    @if (ViewBag.Success !=null) {
+    <div class="wel regSucc">
+        <p>REGISTRATION IS SUCCESSFULL. THANK YOU!</p>
+    </div>
+    }
+
+   @using (Html.BeginForm())
+   {
+     
+    @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="first-name">First Name<span>*</span></label>
+                @Html.TextBoxFor(a => a.f_name,new { @class= "form-control formCSS formCSS2"})
+                @Html.ValidationMessageFor(model => model.f_name,"", new { @class = "text-danger" })
+                @*<input type="text" class="form-control formCSS formCSS2" id="f_name" name="f_name"   ng-model="user.f_name" required>*@
+            </div>
+            <div class="col-lg-4">
+                <label for="company-name">Company Name<span>*</span></label>
+                @Html.TextBoxFor(a => a.company, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.company, "", new { @class = "text-danger" })
+                @*<input type="text" class="form-control formCSS formCSS2" id="company" name="company" ng-model="user.company" required>*@
+            </div>
+            <div class="col-lg-4">
+                <label for="password">Password<span>*</span></label>
+                @Html.PasswordFor(a => a.password, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                @*<input type="password" class="form-control formCSS formCSS2" name="password" id="password" ng-model="user.password" required>*@
+            </div>
+        </div><!-- -->
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="last-name">Last Name<span>*</span></label>
+                @Html.TextBoxFor(a => a.l_name, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.l_name, "", new { @class = "text-danger" })
+                @*<input type="text" ng-model="user.l_name"  class="form-control formCSS formCSS2" name="l_name" id="l_name" required>*@
+            </div>
+
+            <div class="col-lg-4">
+                <label for="user-name">User Name<span>*</span></label>
+                @Html.TextBoxFor(a => a.user_name, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
+                @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.user_name" name="user_name" id="user_name" required>*@
+            </div>
+
+            <div class="col-lg-4">
+                <label for="confirm_password">Confirm Password<span>*</span></label>
+                @Html.PasswordFor(a => a.confirm_password, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.confirm_password, "", new { @class = "text-danger" })
+                 @*<input type="password" class="form-control formCSS formCSS2" ng-model="user.confirm_password" name="confirm_password" id="confirm_password" required>*@
+            </div>
+        </div><!-- -->
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="email">Email<span>*</span></label>
+                @Html.TextBoxFor(a => a.email, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                @*<input type="email" class="form-control formCSS formCSS2" name="email" ng-model="user.email" id="email" required>*@
+            </div>
+            <p class="help-block"><em>Must only contain letters and numbers</em></p>
+        </div><!-- -->
+        <div class="second">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="contact-name">Contact Name</label>
+                    @Html.TextBoxFor(a => a.contact_name, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.contact_name, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" name ="contact_name" ng-model="user.contact_name" id="contact_name">*@
+                </div>
+                <div class="col-lg-4">
+                    <label for="contact-email">Contact Email</label>
+                    @Html.TextBoxFor(a => a.contact_email, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.contact_email, "", new { @class = "text-danger" })
+                    @*<input type="email" class="form-control formCSS formCSS2" name="contact_email" ng-model="user.contact_email" id="contact_email">*@
+                </div>
+                <div class="col-lg-4">
+                    <label for="mobile-number">Mobile Number<span>*</span></label>
+                    @Html.TextBoxFor(a => a.phone, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" name="phone" id="phone" ng-model="user.phone" required>*@
+                </div>
+            </div><!-- -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="contact-position">Contact Position</label>
+                    @Html.TextBoxFor(a => a.contact_position, new { @class = "form-control formCSS formCSS2" })
+                    @Html.ValidationMessageFor(model => model.contact_position, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.contact_position" name="contact_position" id="contact_position">*@
+                </div>
+                <div class="col-lg-4">
+                    <label for="contact-phone">Contact Phone</label>
+                    @Html.TextBoxFor(a => a.contact_phone, new { @class = "form-control formCSS formCSS2" })
+                    @Html.ValidationMessageFor(model => model.contact_phone, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.contact_phone" name="contact_phone" id="contact_phone">*@
+                </div>
+            </div><!-- -->
+        </div>
+        <div class="third">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="adress1">Adress 1<span>*</span></label>
+                    @Html.TextBoxFor(a => a.address, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.address" name="address" id="address" required>*@
+                </div>
+                <div class="col-lg-4">
+                    <label for="city">City<span>*</span></label>
+                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.city" id="city" name="city" required>*@
+                    @Html.TextBoxFor(a => a.city, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-lg-4">
+                    <label for="postal-code">Postal Code<span>*</span></label>
+                    @Html.TextBoxFor(a => a.pin, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.pin, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" id="pin" ng-model="user.pin" name="pin" required="">*@
+                </div>
+
+            </div><!-- -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="adress2">Adress 2</label>
+                    @Html.TextBoxFor(a => a.address2, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.address2, "", new { @class = "text-danger" })
+                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.address2" id="address2" name="address2">*@
+                </div>
+                <div class="col-lg-4">
+                    <label for="state">State<span>*</span></label>
+                    <select name="state" id="state" class="form-control formCSS formCSS2"   ng-model="user.state" required>
+                        <option value="">Select State</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="District Of Columbia">District Of Columbia</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Others">Others</option>
+                        <option value="outh Dakota">outh Dakota</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
+                    <span class="field-validation-error text-danger"  id="state_validation"></span>
+                    @*<input type="text" class="form-control formCSS formCSS2" id="state" required>*@
+                </div>
+                <div class="col-lg-4">
+                     
+                    <div class="col-md-12">
+                        @Html.MathCaptcha()
+                        
+                        <p style="color:#a94442;">  @ViewBag.ErrMessage </p>
+                    </div>
+                </div>
+            </div><!-- -->
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="checkbox">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label><input type="checkbox" id="chk_tc" required><em> I agree to the terms and conditions. View the <a href="#">Terms and Conditions</a></em></label>
+                                
+                             </div>
+                            &nbsp;&nbsp;<span class="field-validation-error text-danger" id="tc_validation"></span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="checkbox">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" onclick="return validate();" class="btn btn-default regButt">REGISTER NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+       
+   }
+        
+        </div>
+   
+
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script type="text/javascript">
+
+        function validate() {
+            
+            //if (!$("#chk_tc").checked) {
+            //    $("#tc_validation").text("Please Select Terms and Conditions")
+
+            //    return false;
+            //}
+
+            if ($("#state").val() == "") {
+                $("#state_validation").text("The State field is required")
+                
+                return false;
+            }
+            //if ($("#password").val() != $("#confirm_password").val()) {
+            //    alert('New Password and Confirm Password Does not match !');
+            //    return false;
+            //}
+        }
+    </script>
+  

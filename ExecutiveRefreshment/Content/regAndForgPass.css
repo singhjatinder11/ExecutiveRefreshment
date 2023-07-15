@@ -1,0 +1,122 @@
+html, body{
+  overflow-x: hidden;
+  height:100%
+}
+#containeer {
+    width: 950px;
+    height: auto;
+    margin: auto;
+
+}
+
+.pTitle {
+    border: none;
+    border-radius: 0px;
+    background-color: #f3f8f9;
+    border-color: #f3f8f9;
+    left:0px;
+    /*margin-top: -20px;*/
+}
+
+.pTitle h1 {
+    font-family: Montserrat-Bold;
+    color: #6f372b;
+    margin-left: 14%
+}
+
+.forma {
+
+}
+
+.formCSS2 {
+    background-color: #fafafa;
+}
+
+.forma label {
+    font-family: Montserrat-Regular;
+    font-size:14px;
+}
+
+.forma label span {
+    color: #ff0101;
+}
+
+.forma .help-block em {
+    font-family: Montserrat-Regular;
+    font-size:14px;
+    color: #ff0101;
+    margin-left: 15px
+}
+
+.regButt {
+    border: 3px solid #ffc80a;
+    border-radius: 30px;
+    font-family: Montserrat-Bold;
+    font-size:12px;
+    margin-bottom: 70px;
+    width: 188px;
+    height: 48px;
+    /*margin-left: -80px;*/
+    letter-spacing: 2px;
+    margin-top: 60px;
+}
+
+.regButt:hover {
+    background-color: #ffc80a;
+    color:#fff;
+    border: 3px solid #ffc80a;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.regSucc {
+    border: none;
+    border-radius: 0px;
+    background-color: #4ebfcc;
+}
+
+.regSucc p {
+    font-family: Montserrat-Bold;
+    font-size:14px;
+    color: #fff;
+    line-height: 40px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+}
+
+.verCode {
+    width: 150px;
+    background-color: #fafafa;
+}
+
+.second {
+    margin-top: 50px;
+}
+
+.third {
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 800px){
+  html, body{
+    overflow-x: hidden;
+  }
+
+.forma{
+  margin-left:1.5%;
+}
+.regSucc{
+  margin-left: -2%;
+}
+
+.regButt{
+  text-align: center;
+  margin:auto;
+  margin-top:1%;
+}
+.pTitle{
+  margin-left:-10%;
+}
+
+
+}

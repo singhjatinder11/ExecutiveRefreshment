@@ -1,0 +1,305 @@
+﻿@model ExecutiveRefreshment.Models.UserModel
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+
+  
+
+@{
+    ViewBag.Title = "Register";
+}
+<style type="text/css">
+    .row {
+        width: 30%;
+        padding: 15px;
+    }
+
+    .form-control {
+        padding: 5px;
+        width: 100%;
+        height: 35px;
+    }
+
+    .control-label {
+        font-family: Verdana;
+        font-size: 15px;
+    }
+
+    input[type=submit] {
+        background: #4ebfcc none repeat scroll 0 0;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 30px;
+        width: 100px;
+    }
+
+    .text-danger {
+        color: red;
+    }
+</style>
+ 
+<div class="row">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h3>User Registration</h3>
+            
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <span class="control-label col-md-2">First Name * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.f_name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.f_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Last Name * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.l_name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.l_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Email Address * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Company Name * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.company, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.company, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">User Name * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Password * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Confirm Password * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.confirm_password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Contact Name * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.contact_name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.contact_name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Contact Position * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.contact_position, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.contact_position, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Contact Email * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.contact_email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.contact_email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Contact Phone * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.contact_phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.contact_phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2"> Mobile Number * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Address 1* :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.billing_address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Address 2  :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.address2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.billing_address2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">City * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">State * :</span>
+                <div class="col-md-5">
+                    @*@Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                    <select name="state" id="state" class="form-control">
+                        <option value="">Select State</option>
+                        <option value="Alabama">Alabama</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Arizona">Arizona</option>
+                        <option value="Arkansas">Arkansas</option>
+                        <option value="California">California</option>
+                        <option value="Colorado">Colorado</option>
+                        <option value="Connecticut">Connecticut</option>
+                        <option value="Delaware">Delaware</option>
+                        <option value="District Of Columbia">District Of Columbia</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Hawaii">Hawaii</option>
+                        <option value="Idaho">Idaho</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="Indiana">Indiana</option>
+                        <option value="Iowa">Iowa</option>
+                        <option value="Kansas">Kansas</option>
+                        <option value="Kentucky">Kentucky</option>
+                        <option value="Louisiana">Louisiana</option>
+                        <option value="Maine">Maine</option>
+                        <option value="Maryland">Maryland</option>
+                        <option value="Massachusetts">Massachusetts</option>
+                        <option value="Michigan">Michigan</option>
+                        <option value="Minnesota">Minnesota</option>
+                        <option value="Mississippi">Mississippi</option>
+                        <option value="Missouri">Missouri</option>
+                        <option value="Montana">Montana</option>
+                        <option value="Nebraska">Nebraska</option>
+                        <option value="Nevada">Nevada</option>
+                        <option value="New Hampshire">New Hampshire</option>
+                        <option value="New Jersey">New Jersey</option>
+                        <option value="New Mexico">New Mexico</option>
+                        <option value="New York">New York</option>
+                        <option value="North Carolina">North Carolina</option>
+                        <option value="North Dakota">North Dakota</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Oklahoma">Oklahoma</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Others">Others</option>
+                        <option value="outh Dakota">outh Dakota</option>
+                        <option value="Pennsylvania">Pennsylvania</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Rhode Island">Rhode Island</option>
+                        <option value="South Carolina">South Carolina</option>
+                        <option value="Tennessee">Tennessee</option>
+                        <option value="Texas">Texas</option>
+                        <option value="Utah">Utah</option>
+                        <option value="Vermont">Vermont</option>
+                        <option value="Virginia">Virginia</option>
+                        <option value="Washington">Washington</option>
+                        <option value="West Virginia">West Virginia</option>
+                        <option value="Wisconsin">Wisconsin</option>
+                        <option value="Wyoming">Wyoming</option>
+                    </select>
+                    @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span class="control-label col-md-2">Postal Code * :</span>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => model.pin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.pin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                    <span class = "control-label col-md-2">Zip * :</span>
+                    <div class="col-md-5">
+                        @Html.EditorFor(model => model.zip, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.zip, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+
+            <div class="form-group">
+                <span class="control-label col-md-2">&nbsp;</span>
+                <div class="col-md-5">
+                    @Html.MathCaptcha()
+                    <p style="color:red;">  @ViewBag.ErrMessage </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" onclick="return validate();" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2 control-label">&nbsp;</span>
+            <div class="col-md-5 alert-danger">
+                @if (ViewBag.Error != null)
+                {
+                    <span class="text-danger">@ViewBag.Message</span>
+                }
+                @if (ViewBag.Success != null)
+                {
+                    <script type="text/javascript">
+                        alert("Registration Successfull !!!");
+                        location.href = "login";
+                    </script>
+                }
+            </div>
+        </div>
+
+    }
+
+
+</div>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script type="text/javascript">
+
+        function validate() {
+
+            if ($("#state").val() == "") {
+                alert('State is required !');
+                return false;
+            }
+        }
+    </script>
+    @*@section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }*@

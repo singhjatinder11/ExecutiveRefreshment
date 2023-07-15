@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Welcome To Executive Refreshments - @ViewBag.Title </title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+   
+    <link href="~/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="~/css/fonts/fonts.css" type="text/css" rel="stylesheet" />
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <script src="~/Scripts/controller.js"></script>
+    <style type="text/css">
+        .modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+   
+   
+}
+
+/* Modal Content */
+.login-modal-content {
+    position: absolute;
+    top: 80px;
+    right: 16%;
+    background-color: #fefefe;
+    width: 25%;
+}
+.forgot-password-modal-content {
+    position: absolute;
+   top: 111px;
+    right: 18%;
+    background-color: #fefefe;
+    width: 25%;
+}
+    </style>
+
+     
+ 
+</head>
+<body ng-app="app">
+    <!-- Header Start here -->
+    <header>
+        <div class="header_wrap">
+            <!-- Logo Start here -->
+            <div class="logo">
+                <div class="logo_bar">
+                    <a href="/"><img src="~/images/logo.jpg"></a>
+                    
+                    </div>
+            </div>
+            <!-- Logo End here -->
+            
+            
+
+
+            <div class="right_top"   >
+                <div class="number_sec">
+                    <div class="number_top">
+                        <p>214-696-0205         </p>
+                        <p>Mon - Fri  8:00 - 05:00 PM CST</p>
+                    </div>
+                </div>
+                <div class="button_wrap"  ng-controller="HomeController">
+                    <span class="login_button anchor_top">
+                        
+                        </span>
+                        @if (Session["UserName"] == null)
+                        {
+                            <div class="login">
+                                <span class="login_button anchor_top">
+                                    @*<a href="javascript:void(0)" ng-click="loginToggle();">Register</a>*@
+                                    <a href="@Url.Action("register","account")">register</a>
+                                </span>
+                                <span class="register_button anchor_top">
+                                @*<a href="@Url.Action("Login","Account")">Login</a>*@
+                                    <a href="javascript:void(0)" data-toggle="modal" ng-click="clear();" data-target="#modelLogin">Login</a>
+                                </span>
+                                <div class="forgot_pass"><a href="javascript:void(0)" ng-click="clear();" data-toggle="modal" data-target="#modelForgotPassword" style="color:#4ebfcc;">Forgot your Password</a></div>
+                            </div>
+                             
+                        }
+                        else
+                        {
+                            <div class="login">
+                                <span class="login_button anchor_top"><b>Hello, @Session["UserName"]</b></span>
+                                <span class="register_button anchor_top"><a href="@Url.Action("SignOut","Account")">Logout</a></span>
+
+                                <div class="forgot_pass"><a href="@Url.Action("ChangePassword","Account")" style="color:#4ebfcc;">Change Password</a></div>
+
+                            </div>
+                        }
+</div>
+            </div>
+
+        </div>
+        <!-- Modal -->
+        
+        <div  ng-controller="HomeController">
+            <div id='modelLogin' class='modal' style="display:none">
+                <!-- Modal content 1 -->
+                <div class='login-modal-content'>
+
+                    <div class='modal-body'>
+
+                        <ul class="form_c">
+                            <span class='close' rel="modelLogin"><a href="#" data-dismiss="modal">X</a></span>
+                            <form>
+                                <li><h4 align="left">Login</h4></li>
+
+
+
+                                <li>
+                                    <input type="text" ng-model="user_name" class="mail_icon" id="user_name" name="user_name" placeholder="User Name">
+                                </li>
+                                <li>
+                                    <input type="password" ng-model="password" class="phone_icon" id="password" name="password" placeholder="Password">
+                                </li>
+                                <li><input type="button" ng-click="doLogin();" value="{{loginButtonText}}" />
+                                    <div ng-if="ErrorMessage && ErrorMessage!=''" class="alert alert-danger">
+                                        <p> {{ErrorMessage}}</p>
+                                    </div>
+                                 </li>
+                            </form>
+                             
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id='modelForgotPassword' class='modal' style="display:none">
+                <!-- Modal content 1 -->
+                <div class='forgot-password-modal-content'>
+
+                    <div class='modal-body'>
+                        <ul class="form_c">
+                            <span class='close' rel="modelForgotPassword"><a href="#" data-dismiss="modal">X</a></span>
+                            <form>
+                                <li><h4 align="left">Forgot Password</h4></li>
+
+
+
+                                <li>
+                                    <input type="text" class="mail_icon" ng-model="user_name" name="user_name" id="user_name" placeholder="User Name">
+                                </li>
+                                <li>
+                                    <input type="text" class="phone_icon" ng-model="email" name="email" id="email" placeholder="Email">
+
+                                </li>
+                                <li><input type="button" ng-click="forgotPassword()"  value="{{forgotPasswordText}}">
+                                    <div ng-if="ErrorMessage && ErrorMessage!=''" class="alert alert-danger">
+                                        <p> {{ErrorMessage}}</p>
+                                    </div>
+                                </li>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Naviation Start here -->
+
+         
+             <nav class="naviation_bar" style="height: 51px; display:block;" >
+            <div class="top_navigation">
+                @*@Html.Partial("_Menu")*@
+                @Html.Action("Menu","Home")
+            </div>
+        </nav>
+
+        <div class="menu">
+
+            <!-- Menu icon -->
+
+            <div class="icon-close"> <i class="fa fa-close"></i> <a>CLOSE</a></div>
+
+            <!-- Menu -->
+
+            <ul>
+                <li><a href="#">ABOUT US</a></li>
+                <li id="clicktab" class="list_menu">
+                    <a href="#">
+                        SERVICES <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    </a>
+                    <ul class="list_style" id="ontab">
+                        <li><a href="#">Bottled & Filtered Water</a></li>
+                        <li><a href="#">Vending</a></li>
+                        <li><a href="#">Office Coffee & Tea</a></li>
+                        <li><a href="#">Refreshments & Snacks</a></li>
+                        <li><a href="#">Breakroom & Janitorial Supplies</a></li>
+                        <li><a href="#">Micro Conventional Store</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">PRODUCTS</a></li>
+                <li><a href="#">CUSTOMER</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li><a href="#">MY CART</a></li>
+            </ul>
+        </div>
+        <div class="icon-menu"> <i class="fa fa-bars"></i> Menu </div>
+        <!-- Naviation End here -->
+    </header>
+    <!-- Header End here -->
+    
+    <div >
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        <div class="footer_main">
+            <div class="nav_links">
+                <ul>
+
+
+                    <li><a href="@Url.Action("Index","Home")">HOME</a></li>
+                    <li><a href="@Url.Action("AboutUs","Home")">ABOUT US</a></li>
+                    @*<li><a href="@Url.Action("Vending","Services")">SERVICES</a></li>
+                    <li><a href="@Url.Action("Index","Product")">PRODUCTS</a></li>*@
+                    <li><a href="@Url.Action("Customer","Account")">CUSTOMER</a></li>
+                    <li><a href="@Url.Action("ContactUs","Home")">CONTACT US</a></li>
+
+                </ul>
+            </div>
+            <div class="copy_rite">Copyright © 2016 Comptest Corporation. All rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+
+        function validateLogin() {
+            if ($("#user_name").val() == undefined || $("#user_name").val() == "") {
+                //alert('User Name is required');
+                return false;
+            }
+            if ($("#password").val() ==undefined || $("#password").val() == "") {
+                //alert('Password is required');
+                return false;
+            }
+        }
+
+        function validateForgotPassword() {
+            if ($("#user_name1").val() == undefined || $("#user_name1").val() == "") {
+                //alert('User Name is required');
+                return false;
+            }
+            if ($("#email").val() == undefined || $("#email").val() == "") {
+                //alert('Email is required');
+                return false;
+            }
+        }
+
+$(document).ready(function(){
+    $("#clicktab").click(function(){
+        $("#ontab").slideToggle();
+    });
+});
+    </script>
+    <script>
+var main = function() {
+
+ /* Push the body and the nav over by 285px over */
+
+jQuery('.icon-menu').click(function() {
+
+  jQuery('.menu').animate({
+
+ left: "0px"
+
+ }, 200);
+
+
+jQuery('body').animate({
+
+left: "285px"
+
+  }, 200);
+
+ });
+
+
+/* Then push them back */
+
+jQuery('.icon-close').click(function() {
+
+ jQuery('.menu').animate({
+
+  left: "-285px"
+
+ }, 200);
+
+
+jQuery('body').animate({
+
+  left: "0px"
+
+  }, 200);
+
+});
+
+};
+
+
+
+jQuery(document).ready(main);
+    </script>
+    <script src="~/js/owl.carousel.js"></script>
+
+    <script>
+    jQuery(document).ready(function() {
+
+      var owl = jQuery("#owl-demo");
+
+      owl.owlCarousel({
+
+      items : 5, //10 items above 1000px browser width
+      itemsDesktop : [1000,5], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // 3 items betweem 900px and 601px
+      itemsTablet: [600,2], //2 items between 600 and 0;
+      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+	  autoPlay: true
+
+      });
+
+      // Custom Navigation Events
+      jQuery(".next").click(function(){
+        owl.trigger('owl.next');
+      })
+      jQuery(".prev").click(function(){
+        owl.trigger('owl.prev');
+      })
+
+
+    });
+    </script>
+
+  
+       
+      
+</body>
+</html>

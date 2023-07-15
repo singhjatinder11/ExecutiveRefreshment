@@ -1,0 +1,1184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ecommerce2ModelStoreContainer" CdmEntityContainer="ecommerce2Entities">
+    <EntitySetMapping Name="cart">
+      <EntityTypeMapping TypeName="ecommerce2Model.cart">
+        <MappingFragment StoreEntitySet="cart">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="ecommerce2Model.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company">
+      <EntityTypeMapping TypeName="ecommerce2Model.company">
+        <MappingFragment StoreEntitySet="company">
+          <ScalarProperty Name="EditSequence" ColumnName="EditSequence" />
+          <ScalarProperty Name="ListID" ColumnName="ListID" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="content">
+      <EntityTypeMapping TypeName="ecommerce2Model.content">
+        <MappingFragment StoreEntitySet="content">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cronlog">
+      <EntityTypeMapping TypeName="ecommerce2Model.cronlog">
+        <MappingFragment StoreEntitySet="cronlog">
+          <ScalarProperty Name="Res" ColumnName="Res" />
+          <ScalarProperty Name="FinalOrderId" ColumnName="FinalOrderId" />
+          <ScalarProperty Name="TxnId" ColumnName="TxnId" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="RentalId" ColumnName="RentalId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CLID" ColumnName="CLID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cronlogsus">
+      <EntityTypeMapping TypeName="ecommerce2Model.cronlogsus">
+        <MappingFragment StoreEntitySet="cronlogsus">
+          <ScalarProperty Name="CLID" ColumnName="CLID" />
+          <ScalarProperty Name="Res" ColumnName="Res" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CLSId" ColumnName="CLSId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="ecommerce2Model.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="res_list_id" ColumnName="res_list_id" />
+          <ScalarProperty Name="cust_com_l" ColumnName="cust_com_l" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="profile" ColumnName="profile" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_invoicing">
+      <EntityTypeMapping TypeName="ecommerce2Model.customer_invoicing">
+        <MappingFragment StoreEntitySet="customer_invoicing">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="damaged_item">
+      <EntityTypeMapping TypeName="ecommerce2Model.damaged_item">
+        <MappingFragment StoreEntitySet="damaged_item">
+          <ScalarProperty Name="rep_sub_name" ColumnName="rep_sub_name" />
+          <ScalarProperty Name="value_d" ColumnName="value_d" />
+          <ScalarProperty Name="type_d" ColumnName="type_d" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="submitter" ColumnName="submitter" />
+          <ScalarProperty Name="who_is_responsible" ColumnName="who_is_responsible" />
+          <ScalarProperty Name="how_it_happen" ColumnName="how_it_happen" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="driver">
+      <EntityTypeMapping TypeName="ecommerce2Model.driver">
+        <MappingFragment StoreEntitySet="driver">
+          <ScalarProperty Name="hire_dt" ColumnName="hire_dt" />
+          <ScalarProperty Name="home_phone" ColumnName="home_phone" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+          <ScalarProperty Name="security_answer" ColumnName="security_answer" />
+          <ScalarProperty Name="security_question" ColumnName="security_question" />
+          <ScalarProperty Name="truck" ColumnName="truck" />
+          <ScalarProperty Name="inactive" ColumnName="inactive" />
+          <ScalarProperty Name="licence" ColumnName="licence" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="l_name" ColumnName="l_name" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="driver_final_order">
+      <EntityTypeMapping TypeName="ecommerce2Model.driver_final_order">
+        <MappingFragment StoreEntitySet="driver_final_order">
+          <ScalarProperty Name="truck_no" ColumnName="truck_no" />
+          <ScalarProperty Name="po" ColumnName="po" />
+          <ScalarProperty Name="qb_o_id" ColumnName="qb_o_id" />
+          <ScalarProperty Name="quickbook_payment_check" ColumnName="quickbook_payment_check" />
+          <ScalarProperty Name="quickbook_invoice_check" ColumnName="quickbook_invoice_check" />
+          <ScalarProperty Name="order_updated" ColumnName="order_updated" />
+          <ScalarProperty Name="sign" ColumnName="sign" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="payment_status" ColumnName="payment_status" />
+          <ScalarProperty Name="delievery_status" ColumnName="delievery_status" />
+          <ScalarProperty Name="paid_on" ColumnName="paid_on" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="driver_final_order_dtls">
+      <EntityTypeMapping TypeName="ecommerce2Model.driver_final_order_dtls">
+        <MappingFragment StoreEntitySet="driver_final_order_dtls">
+          <ScalarProperty Name="price_update" ColumnName="price_update" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="driver_final_order_dtls_temp">
+      <EntityTypeMapping TypeName="ecommerce2Model.driver_final_order_dtls_temp">
+        <MappingFragment StoreEntitySet="driver_final_order_dtls_temp">
+          <ScalarProperty Name="price_update" ColumnName="price_update" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_module">
+      <EntityTypeMapping TypeName="ecommerce2Model.dt_module">
+        <MappingFragment StoreEntitySet="dt_module">
+          <ScalarProperty Name="emp_delete" ColumnName="emp_delete" />
+          <ScalarProperty Name="emp_edit" ColumnName="emp_edit" />
+          <ScalarProperty Name="emp_add" ColumnName="emp_add" />
+          <ScalarProperty Name="emp" ColumnName="emp" />
+          <ScalarProperty Name="customer_qb" ColumnName="customer_qb" />
+          <ScalarProperty Name="invoice_qb" ColumnName="invoice_qb" />
+          <ScalarProperty Name="order_qb" ColumnName="order_qb" />
+          <ScalarProperty Name="customer_delete" ColumnName="customer_delete" />
+          <ScalarProperty Name="customer_edit" ColumnName="customer_edit" />
+          <ScalarProperty Name="customer_add" ColumnName="customer_add" />
+          <ScalarProperty Name="customer" ColumnName="customer" />
+          <ScalarProperty Name="invoice_delete" ColumnName="invoice_delete" />
+          <ScalarProperty Name="invoice_edit" ColumnName="invoice_edit" />
+          <ScalarProperty Name="invoice_add" ColumnName="invoice_add" />
+          <ScalarProperty Name="invoice" ColumnName="invoice" />
+          <ScalarProperty Name="order_delete" ColumnName="order_delete" />
+          <ScalarProperty Name="order_edit" ColumnName="order_edit" />
+          <ScalarProperty Name="order_add" ColumnName="order_add" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="inventory_delete" ColumnName="inventory_delete" />
+          <ScalarProperty Name="inventory_edit" ColumnName="inventory_edit" />
+          <ScalarProperty Name="inventory_add" ColumnName="inventory_add" />
+          <ScalarProperty Name="inventory" ColumnName="inventory" />
+          <ScalarProperty Name="driver_delete" ColumnName="driver_delete" />
+          <ScalarProperty Name="driver_edit" ColumnName="driver_edit" />
+          <ScalarProperty Name="driver_add" ColumnName="driver_add" />
+          <ScalarProperty Name="driver" ColumnName="driver" />
+          <ScalarProperty Name="truck_delete" ColumnName="truck_delete" />
+          <ScalarProperty Name="truck_edit" ColumnName="truck_edit" />
+          <ScalarProperty Name="truck_add" ColumnName="truck_add" />
+          <ScalarProperty Name="truck" ColumnName="truck" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_module_driver">
+      <EntityTypeMapping TypeName="ecommerce2Model.dt_module_driver">
+        <MappingFragment StoreEntitySet="dt_module_driver">
+          <ScalarProperty Name="add_order_delete" ColumnName="add_order_delete" />
+          <ScalarProperty Name="add_order_edit" ColumnName="add_order_edit" />
+          <ScalarProperty Name="add_order_add" ColumnName="add_order_add" />
+          <ScalarProperty Name="add_order" ColumnName="add_order" />
+          <ScalarProperty Name="inventory_delete" ColumnName="inventory_delete" />
+          <ScalarProperty Name="inventory_edit" ColumnName="inventory_edit" />
+          <ScalarProperty Name="inventory_add" ColumnName="inventory_add" />
+          <ScalarProperty Name="inventory" ColumnName="inventory" />
+          <ScalarProperty Name="truck_inventory_delete" ColumnName="truck_inventory_delete" />
+          <ScalarProperty Name="truck_inventory_edit" ColumnName="truck_inventory_edit" />
+          <ScalarProperty Name="truck_inventory_add" ColumnName="truck_inventory_add" />
+          <ScalarProperty Name="truck_inventory" ColumnName="truck_inventory" />
+          <ScalarProperty Name="order_dtl_delete" ColumnName="order_dtl_delete" />
+          <ScalarProperty Name="order_dtl_edit" ColumnName="order_dtl_edit" />
+          <ScalarProperty Name="order_dtl_add" ColumnName="order_dtl_add" />
+          <ScalarProperty Name="order_dtl" ColumnName="order_dtl" />
+          <ScalarProperty Name="my_profile_delete" ColumnName="my_profile_delete" />
+          <ScalarProperty Name="my_profile_edit" ColumnName="my_profile_edit" />
+          <ScalarProperty Name="my_profile_add" ColumnName="my_profile_add" />
+          <ScalarProperty Name="my_profile" ColumnName="my_profile" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_role">
+      <EntityTypeMapping TypeName="ecommerce2Model.dt_role">
+        <MappingFragment StoreEntitySet="dt_role">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_state">
+      <EntityTypeMapping TypeName="ecommerce2Model.dt_state">
+        <MappingFragment StoreEntitySet="dt_state">
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dt_welcome">
+      <EntityTypeMapping TypeName="ecommerce2Model.dt_welcome">
+        <MappingFragment StoreEntitySet="dt_welcome">
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="chk_value" ColumnName="chk_value" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="edit_module">
+      <EntityTypeMapping TypeName="ecommerce2Model.edit_module">
+        <MappingFragment StoreEntitySet="edit_module">
+          <ScalarProperty Name="exchange" ColumnName="exchange" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="mobile_tool" ColumnName="mobile_tool" />
+          <ScalarProperty Name="return_tool" ColumnName="return_tool" />
+          <ScalarProperty Name="customer_rentals" ColumnName="customer_rentals" />
+          <ScalarProperty Name="purchase" ColumnName="purchase" />
+          <ScalarProperty Name="user_setup" ColumnName="user_setup" />
+          <ScalarProperty Name="inventory" ColumnName="inventory" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="email_attach">
+      <EntityTypeMapping TypeName="ecommerce2Model.email_attach">
+        <MappingFragment StoreEntitySet="email_attach">
+          <ScalarProperty Name="image_name" ColumnName="image_name" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="failedorders">
+      <EntityTypeMapping TypeName="ecommerce2Model.failedorders">
+        <MappingFragment StoreEntitySet="failedorders">
+          <ScalarProperty Name="FinalOrderDetails_CartId" ColumnName="FinalOrderDetails_CartId" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FOId" ColumnName="FOId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="final_order">
+      <EntityTypeMapping TypeName="ecommerce2Model.final_order">
+        <MappingFragment StoreEntitySet="final_order">
+          <ScalarProperty Name="rental_to" ColumnName="rental_to" />
+          <ScalarProperty Name="rental_from" ColumnName="rental_from" />
+          <ScalarProperty Name="from_customer" ColumnName="from_customer" />
+          <ScalarProperty Name="rental_check" ColumnName="rental_check" />
+          <ScalarProperty Name="EditSequence" ColumnName="EditSequence" />
+          <ScalarProperty Name="TxnId" ColumnName="TxnId" />
+          <ScalarProperty Name="get_id_r" ColumnName="get_id_r" />
+          <ScalarProperty Name="fs" ColumnName="fs" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="invoice" ColumnName="invoice" />
+          <ScalarProperty Name="send" ColumnName="send" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="po" ColumnName="po" />
+          <ScalarProperty Name="qb_o_id" ColumnName="qb_o_id" />
+          <ScalarProperty Name="quickbook_payment_check" ColumnName="quickbook_payment_check" />
+          <ScalarProperty Name="quickbook_invoice_check" ColumnName="quickbook_invoice_check" />
+          <ScalarProperty Name="order_updated" ColumnName="order_updated" />
+          <ScalarProperty Name="sign" ColumnName="sign" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="payment_status" ColumnName="payment_status" />
+          <ScalarProperty Name="delievery_status" ColumnName="delievery_status" />
+          <ScalarProperty Name="paid_on" ColumnName="paid_on" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="final_order_dtls">
+      <EntityTypeMapping TypeName="ecommerce2Model.final_order_dtls">
+        <MappingFragment StoreEntitySet="final_order_dtls">
+          <ScalarProperty Name="EditSequence" ColumnName="EditSequence" />
+          <ScalarProperty Name="TxnLineId" ColumnName="TxnLineId" />
+          <ScalarProperty Name="original" ColumnName="original" />
+          <ScalarProperty Name="left_qty" ColumnName="left_qty" />
+          <ScalarProperty Name="minus_qty" ColumnName="minus_qty" />
+          <ScalarProperty Name="pending_qty" ColumnName="pending_qty" />
+          <ScalarProperty Name="price_update" ColumnName="price_update" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="final_order_dtls_temp">
+      <EntityTypeMapping TypeName="ecommerce2Model.final_order_dtls_temp">
+        <MappingFragment StoreEntitySet="final_order_dtls_temp">
+          <ScalarProperty Name="minus_qty" ColumnName="minus_qty" />
+          <ScalarProperty Name="pending_qty" ColumnName="pending_qty" />
+          <ScalarProperty Name="price_update" ColumnName="price_update" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logo">
+      <EntityTypeMapping TypeName="ecommerce2Model.logo">
+        <MappingFragment StoreEntitySet="logo">
+          <ScalarProperty Name="home_status" ColumnName="home_status" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logo_pages">
+      <EntityTypeMapping TypeName="ecommerce2Model.logo_pages">
+        <MappingFragment StoreEntitySet="logo_pages">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manage_rentals">
+      <EntityTypeMapping TypeName="ecommerce2Model.manage_rentals">
+        <MappingFragment StoreEntitySet="manage_rentals">
+          <ScalarProperty Name="po" ColumnName="po" />
+          <ScalarProperty Name="email_date" ColumnName="email_date" />
+          <ScalarProperty Name="check_tax" ColumnName="check_tax" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="next_invoice" ColumnName="next_invoice" />
+          <ScalarProperty Name="invoice_start_date" ColumnName="invoice_start_date" />
+          <ScalarProperty Name="invoice_period" ColumnName="invoice_period" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="publish" ColumnName="publish" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="lease_no" ColumnName="lease_no" />
+          <ScalarProperty Name="invoice_date" ColumnName="invoice_date" />
+          <ScalarProperty Name="customer" ColumnName="customer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="map">
+      <EntityTypeMapping TypeName="ecommerce2Model.map">
+        <MappingFragment StoreEntitySet="map">
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="truck_id" ColumnName="truck_id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="newsletter">
+      <EntityTypeMapping TypeName="ecommerce2Model.newsletter">
+        <MappingFragment StoreEntitySet="newsletter">
+          <ScalarProperty Name="end_dt" ColumnName="end_dt" />
+          <ScalarProperty Name="start_dt" ColumnName="start_dt" />
+          <ScalarProperty Name="added_on" ColumnName="added_on" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="noti_user">
+      <EntityTypeMapping TypeName="ecommerce2Model.noti_user">
+        <MappingFragment StoreEntitySet="noti_user">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="check_val" ColumnName="check_val" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment">
+      <EntityTypeMapping TypeName="ecommerce2Model.payment">
+        <MappingFragment StoreEntitySet="payment">
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="expiry_date" ColumnName="expiry_date" />
+          <ScalarProperty Name="cc_user_name" ColumnName="cc_user_name" />
+          <ScalarProperty Name="cc_type" ColumnName="cc_type" />
+          <ScalarProperty Name="cc_number" ColumnName="cc_number" />
+          <ScalarProperty Name="cash_phone" ColumnName="cash_phone" />
+          <ScalarProperty Name="cash_name" ColumnName="cash_name" />
+          <ScalarProperty Name="cheque_dtl" ColumnName="cheque_dtl" />
+          <ScalarProperty Name="cheque_no" ColumnName="cheque_no" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="customer" ColumnName="customer" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payment_order">
+      <EntityTypeMapping TypeName="ecommerce2Model.payment_order">
+        <MappingFragment StoreEntitySet="payment_order">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pre_final_order_dtls">
+      <EntityTypeMapping TypeName="ecommerce2Model.pre_final_order_dtls">
+        <MappingFragment StoreEntitySet="pre_final_order_dtls">
+          <ScalarProperty Name="pro_title" ColumnName="pro_title" />
+          <ScalarProperty Name="cust_p" ColumnName="cust_p" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="price_update" ColumnName="price_update" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pre_final_order_dtls_tmp">
+      <EntityTypeMapping TypeName="ecommerce2Model.pre_final_order_dtls_tmp">
+        <MappingFragment StoreEntitySet="pre_final_order_dtls_tmp">
+          <ScalarProperty Name="pro_title" ColumnName="pro_title" />
+          <ScalarProperty Name="cust_p" ColumnName="cust_p" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="price_update" ColumnName="price_update" />
+          <ScalarProperty Name="design_image" ColumnName="design_image" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sale_price" ColumnName="sale_price" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_user_price">
+      <EntityTypeMapping TypeName="ecommerce2Model.product_user_price">
+        <MappingFragment StoreEntitySet="product_user_price">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="promo">
+      <EntityTypeMapping TypeName="ecommerce2Model.promo">
+        <MappingFragment StoreEntitySet="promo">
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="promo_code" ColumnName="promo_code" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qblog">
+      <EntityTypeMapping TypeName="ecommerce2Model.qblog">
+        <MappingFragment StoreEntitySet="qblog">
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Errors" ColumnName="Errors" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Successful" ColumnName="Successful" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="QBLogId" ColumnName="QBLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qblog_customer">
+      <EntityTypeMapping TypeName="ecommerce2Model.qblog_customer">
+        <MappingFragment StoreEntitySet="qblog_customer">
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Errors" ColumnName="Errors" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Successful" ColumnName="Successful" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="QBCLogId" ColumnName="QBCLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="qblog_inventory">
+      <EntityTypeMapping TypeName="ecommerce2Model.qblog_inventory">
+        <MappingFragment StoreEntitySet="qblog_inventory">
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Errors" ColumnName="Errors" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Successful" ColumnName="Successful" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="QBILogId" ColumnName="QBILogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_config">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_config">
+        <MappingFragment StoreEntitySet="quickbooks_config">
+          <ScalarProperty Name="mod_datetime" ColumnName="mod_datetime" />
+          <ScalarProperty Name="write_datetime" ColumnName="write_datetime" />
+          <ScalarProperty Name="cfgopts" ColumnName="cfgopts" />
+          <ScalarProperty Name="cfgtype" ColumnName="cfgtype" />
+          <ScalarProperty Name="cfgval" ColumnName="cfgval" />
+          <ScalarProperty Name="cfgkey" ColumnName="cfgkey" />
+          <ScalarProperty Name="module" ColumnName="module" />
+          <ScalarProperty Name="qb_username" ColumnName="qb_username" />
+          <ScalarProperty Name="quickbooks_config_id" ColumnName="quickbooks_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_log">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_log">
+        <MappingFragment StoreEntitySet="quickbooks_log">
+          <ScalarProperty Name="log_datetime" ColumnName="log_datetime" />
+          <ScalarProperty Name="msg" ColumnName="msg" />
+          <ScalarProperty Name="batch" ColumnName="batch" />
+          <ScalarProperty Name="quickbooks_ticket_id" ColumnName="quickbooks_ticket_id" />
+          <ScalarProperty Name="quickbooks_log_id" ColumnName="quickbooks_log_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_oauth">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_oauth">
+        <MappingFragment StoreEntitySet="quickbooks_oauth">
+          <ScalarProperty Name="touch_datetime" ColumnName="touch_datetime" />
+          <ScalarProperty Name="access_datetime" ColumnName="access_datetime" />
+          <ScalarProperty Name="request_datetime" ColumnName="request_datetime" />
+          <ScalarProperty Name="qb_user" ColumnName="qb_user" />
+          <ScalarProperty Name="qb_flavor" ColumnName="qb_flavor" />
+          <ScalarProperty Name="qb_realm" ColumnName="qb_realm" />
+          <ScalarProperty Name="oauth_access_token_secret" ColumnName="oauth_access_token_secret" />
+          <ScalarProperty Name="oauth_access_token" ColumnName="oauth_access_token" />
+          <ScalarProperty Name="oauth_request_token_secret" ColumnName="oauth_request_token_secret" />
+          <ScalarProperty Name="oauth_request_token" ColumnName="oauth_request_token" />
+          <ScalarProperty Name="app_tenant" ColumnName="app_tenant" />
+          <ScalarProperty Name="app_username" ColumnName="app_username" />
+          <ScalarProperty Name="quickbooks_oauth_id" ColumnName="quickbooks_oauth_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_queue">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_queue">
+        <MappingFragment StoreEntitySet="quickbooks_queue">
+          <ScalarProperty Name="dequeue_datetime" ColumnName="dequeue_datetime" />
+          <ScalarProperty Name="enqueue_datetime" ColumnName="enqueue_datetime" />
+          <ScalarProperty Name="msg" ColumnName="msg" />
+          <ScalarProperty Name="qb_status" ColumnName="qb_status" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="qbxml" ColumnName="qbxml" />
+          <ScalarProperty Name="extra" ColumnName="extra" />
+          <ScalarProperty Name="ident" ColumnName="ident" />
+          <ScalarProperty Name="qb_action" ColumnName="qb_action" />
+          <ScalarProperty Name="qb_username" ColumnName="qb_username" />
+          <ScalarProperty Name="quickbooks_ticket_id" ColumnName="quickbooks_ticket_id" />
+          <ScalarProperty Name="quickbooks_queue_id" ColumnName="quickbooks_queue_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_recur">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_recur">
+        <MappingFragment StoreEntitySet="quickbooks_recur">
+          <ScalarProperty Name="enqueue_datetime" ColumnName="enqueue_datetime" />
+          <ScalarProperty Name="recur_lasttime" ColumnName="recur_lasttime" />
+          <ScalarProperty Name="run_every" ColumnName="run_every" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="qbxml" ColumnName="qbxml" />
+          <ScalarProperty Name="extra" ColumnName="extra" />
+          <ScalarProperty Name="ident" ColumnName="ident" />
+          <ScalarProperty Name="qb_action" ColumnName="qb_action" />
+          <ScalarProperty Name="qb_username" ColumnName="qb_username" />
+          <ScalarProperty Name="quickbooks_recur_id" ColumnName="quickbooks_recur_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_ticket">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_ticket">
+        <MappingFragment StoreEntitySet="quickbooks_ticket">
+          <ScalarProperty Name="touch_datetime" ColumnName="touch_datetime" />
+          <ScalarProperty Name="write_datetime" ColumnName="write_datetime" />
+          <ScalarProperty Name="ipaddr" ColumnName="ipaddr" />
+          <ScalarProperty Name="lasterror_msg" ColumnName="lasterror_msg" />
+          <ScalarProperty Name="lasterror_num" ColumnName="lasterror_num" />
+          <ScalarProperty Name="processed" ColumnName="processed" />
+          <ScalarProperty Name="ticket" ColumnName="ticket" />
+          <ScalarProperty Name="qb_username" ColumnName="qb_username" />
+          <ScalarProperty Name="quickbooks_ticket_id" ColumnName="quickbooks_ticket_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quickbooks_user">
+      <EntityTypeMapping TypeName="ecommerce2Model.quickbooks_user">
+        <MappingFragment StoreEntitySet="quickbooks_user">
+          <ScalarProperty Name="touch_datetime" ColumnName="touch_datetime" />
+          <ScalarProperty Name="write_datetime" ColumnName="write_datetime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="qbwc_min_run_every_n_seconds" ColumnName="qbwc_min_run_every_n_seconds" />
+          <ScalarProperty Name="qbwc_wait_before_next_update" ColumnName="qbwc_wait_before_next_update" />
+          <ScalarProperty Name="qb_company_file" ColumnName="qb_company_file" />
+          <ScalarProperty Name="qb_password" ColumnName="qb_password" />
+          <ScalarProperty Name="qb_username" ColumnName="qb_username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rentals_item">
+      <EntityTypeMapping TypeName="ecommerce2Model.rentals_item">
+        <MappingFragment StoreEntitySet="rentals_item">
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="rental_end_date" ColumnName="rental_end_date" />
+          <ScalarProperty Name="rental_start_date" ColumnName="rental_start_date" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="term" ColumnName="term" />
+          <ScalarProperty Name="cust_rent" ColumnName="cust_rent" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="rental_id" ColumnName="rental_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="revised_invoice">
+      <EntityTypeMapping TypeName="ecommerce2Model.revised_invoice">
+        <MappingFragment StoreEntitySet="revised_invoice">
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="invoice_no_new" ColumnName="invoice_no_new" />
+          <ScalarProperty Name="invoice_no_old" ColumnName="invoice_no_old" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sent_mail">
+      <EntityTypeMapping TypeName="ecommerce2Model.sent_mail">
+        <MappingFragment StoreEntitySet="sent_mail">
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="sub" ColumnName="sub" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service">
+      <EntityTypeMapping TypeName="ecommerce2Model.service">
+        <MappingFragment StoreEntitySet="service">
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_menu">
+      <EntityTypeMapping TypeName="ecommerce2Model.service_menu">
+        <MappingFragment StoreEntitySet="service_menu">
+          <ScalarProperty Name="rank" ColumnName="rank" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="shipping_address">
+      <EntityTypeMapping TypeName="ecommerce2Model.shipping_address">
+        <MappingFragment StoreEntitySet="shipping_address">
+          <ScalarProperty Name="country_sender" ColumnName="country_sender" />
+          <ScalarProperty Name="phone_sender" ColumnName="phone_sender" />
+          <ScalarProperty Name="pin_sender" ColumnName="pin_sender" />
+          <ScalarProperty Name="state_sender" ColumnName="state_sender" />
+          <ScalarProperty Name="city_sender" ColumnName="city_sender" />
+          <ScalarProperty Name="address2_sender" ColumnName="address2_sender" />
+          <ScalarProperty Name="address1_sender" ColumnName="address1_sender" />
+          <ScalarProperty Name="email_sender" ColumnName="email_sender" />
+          <ScalarProperty Name="name_sender" ColumnName="name_sender" />
+          <ScalarProperty Name="country_ship" ColumnName="country_ship" />
+          <ScalarProperty Name="pin_ship" ColumnName="pin_ship" />
+          <ScalarProperty Name="phone_ship" ColumnName="phone_ship" />
+          <ScalarProperty Name="state_ship" ColumnName="state_ship" />
+          <ScalarProperty Name="city_ship" ColumnName="city_ship" />
+          <ScalarProperty Name="address2_ship" ColumnName="address2_ship" />
+          <ScalarProperty Name="address1_ship" ColumnName="address1_ship" />
+          <ScalarProperty Name="lname_ship" ColumnName="lname_ship" />
+          <ScalarProperty Name="fname_ship" ColumnName="fname_ship" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sub_service">
+      <EntityTypeMapping TypeName="ecommerce2Model.sub_service">
+        <MappingFragment StoreEntitySet="sub_service">
+          <ScalarProperty Name="radio" ColumnName="radio" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="added_on" ColumnName="added_on" />
+          <ScalarProperty Name="video" ColumnName="video" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscribe">
+      <EntityTypeMapping TypeName="ecommerce2Model.subscribe">
+        <MappingFragment StoreEntitySet="subscribe">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="truck">
+      <EntityTypeMapping TypeName="ecommerce2Model.truck">
+        <MappingFragment StoreEntitySet="truck">
+          <ScalarProperty Name="vin" ColumnName="vin" />
+          <ScalarProperty Name="lp" ColumnName="lp" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="inactive" ColumnName="inactive" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="condition" ColumnName="condition" />
+          <ScalarProperty Name="purchased_date" ColumnName="purchased_date" />
+          <ScalarProperty Name="company_cost" ColumnName="company_cost" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="purchased_from" ColumnName="purchased_from" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="made" ColumnName="made" />
+          <ScalarProperty Name="truck_no" ColumnName="truck_no" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="truck_inventory">
+      <EntityTypeMapping TypeName="ecommerce2Model.truck_inventory">
+        <MappingFragment StoreEntitySet="truck_inventory">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="shipping_date" ColumnName="shipping_date" />
+          <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+          <ScalarProperty Name="truck_id" ColumnName="truck_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="truck_inventory_product">
+      <EntityTypeMapping TypeName="ecommerce2Model.truck_inventory_product">
+        <MappingFragment StoreEntitySet="truck_inventory_product">
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="truck_inventory_id" ColumnName="truck_inventory_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="truck_maintenance">
+      <EntityTypeMapping TypeName="ecommerce2Model.truck_maintenance">
+        <MappingFragment StoreEntitySet="truck_maintenance">
+          <ScalarProperty Name="truck_id" ColumnName="truck_id" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="m_comment" ColumnName="m_comment" />
+          <ScalarProperty Name="m_by" ColumnName="m_by" />
+          <ScalarProperty Name="paid_by" ColumnName="paid_by" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="service_company" ColumnName="service_company" />
+          <ScalarProperty Name="m_type" ColumnName="m_type" />
+          <ScalarProperty Name="m_date" ColumnName="m_date" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="out_of_service" ColumnName="out_of_service" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="truck_order">
+      <EntityTypeMapping TypeName="ecommerce2Model.truck_order">
+        <MappingFragment StoreEntitySet="truck_order">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="shipping_date" ColumnName="shipping_date" />
+          <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+          <ScalarProperty Name="truck_id" ColumnName="truck_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="truck_order_item">
+      <EntityTypeMapping TypeName="ecommerce2Model.truck_order_item">
+        <MappingFragment StoreEntitySet="truck_order_item">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="shipping_date" ColumnName="shipping_date" />
+          <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+          <ScalarProperty Name="truck_id" ColumnName="truck_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="truck_order_id" ColumnName="truck_order_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="ecommerce2Model.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="po_no" ColumnName="po_no" />
+          <ScalarProperty Name="res_list_id" ColumnName="res_list_id" />
+          <ScalarProperty Name="cust_com_l" ColumnName="cust_com_l" />
+          <ScalarProperty Name="check_tax" ColumnName="check_tax" />
+          <ScalarProperty Name="EditSequence" ColumnName="EditSequence" />
+          <ScalarProperty Name="ListID" ColumnName="ListID" />
+          <ScalarProperty Name="quickbooks_errmsg" ColumnName="quickbooks_errmsg" />
+          <ScalarProperty Name="quickbooks_errnum" ColumnName="quickbooks_errnum" />
+          <ScalarProperty Name="quickbooks_editsequence" ColumnName="quickbooks_editsequence" />
+          <ScalarProperty Name="quickbooks_listid" ColumnName="quickbooks_listid" />
+          <ScalarProperty Name="NextDelvDate" ColumnName="NextDelvDate" />
+          <ScalarProperty Name="PurchOrder" ColumnName="PurchOrder" />
+          <ScalarProperty Name="Acquisition" ColumnName="Acquisition" />
+          <ScalarProperty Name="Business" ColumnName="Business" />
+          <ScalarProperty Name="HHinvoiceCopies" ColumnName="HHinvoiceCopies" />
+          <ScalarProperty Name="DateLastDelv" ColumnName="DateLastDelv" />
+          <ScalarProperty Name="PriceList" ColumnName="PriceList" />
+          <ScalarProperty Name="TaxStatus" ColumnName="TaxStatus" />
+          <ScalarProperty Name="TaxAuth" ColumnName="TaxAuth" />
+          <ScalarProperty Name="CreditLimt" ColumnName="CreditLimt" />
+          <ScalarProperty Name="CreditClass" ColumnName="CreditClass" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="ChainStoreNum" ColumnName="ChainStoreNum" />
+          <ScalarProperty Name="billing_address2" ColumnName="billing_address2" />
+          <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+          <ScalarProperty Name="master_cust" ColumnName="master_cust" />
+          <ScalarProperty Name="fs" ColumnName="fs" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="customer_invoice" ColumnName="customer_invoice" />
+          <ScalarProperty Name="quickbook_check" ColumnName="quickbook_check" />
+          <ScalarProperty Name="qb_id" ColumnName="qb_id" />
+          <ScalarProperty Name="contact_phone" ColumnName="contact_phone" />
+          <ScalarProperty Name="contact_email" ColumnName="contact_email" />
+          <ScalarProperty Name="contact_position" ColumnName="contact_position" />
+          <ScalarProperty Name="contact_name" ColumnName="contact_name" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="auth_trans_key" ColumnName="auth_trans_key" />
+          <ScalarProperty Name="auth_login_id" ColumnName="auth_login_id" />
+          <ScalarProperty Name="merchant_acct" ColumnName="merchant_acct" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="num_list" ColumnName="num_list" />
+          <ScalarProperty Name="shop_id" ColumnName="shop_id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="publish" ColumnName="publish" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="l_name" ColumnName="l_name" />
+          <ScalarProperty Name="f_name" ColumnName="f_name" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_hit_status">
+      <EntityTypeMapping TypeName="ecommerce2Model.user_hit_status">
+        <MappingFragment StoreEntitySet="user_hit_status">
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="hit_count" ColumnName="hit_count" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="ecommerce2Model.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="hire_dt" ColumnName="hire_dt" />
+          <ScalarProperty Name="home_phone" ColumnName="home_phone" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="exp_date" ColumnName="exp_date" />
+          <ScalarProperty Name="security_answer" ColumnName="security_answer" />
+          <ScalarProperty Name="security_question" ColumnName="security_question" />
+          <ScalarProperty Name="licence" ColumnName="licence" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="inactive" ColumnName="inactive" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="ind_id" ColumnName="ind_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendor">
+      <EntityTypeMapping TypeName="ecommerce2Model.vendor">
+        <MappingFragment StoreEntitySet="vendor">
+          <ScalarProperty Name="pur_name" ColumnName="pur_name" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="com_price" ColumnName="com_price" />
+          <ScalarProperty Name="com_date" ColumnName="com_date" />
+          <ScalarProperty Name="com_qua" ColumnName="com_qua" />
+          <ScalarProperty Name="com_phone" ColumnName="com_phone" />
+          <ScalarProperty Name="com_zip" ColumnName="com_zip" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="com_city" ColumnName="com_city" />
+          <ScalarProperty Name="com_add" ColumnName="com_add" />
+          <ScalarProperty Name="com_from" ColumnName="com_from" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vendor_item">
+      <EntityTypeMapping TypeName="ecommerce2Model.vendor_item">
+        <MappingFragment StoreEntitySet="vendor_item">
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="qty_in" ColumnName="qty_in" />
+          <ScalarProperty Name="pr_name" ColumnName="pr_name" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product">
+      <EntityTypeMapping TypeName="ecommerce2Model.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="res_list_id" ColumnName="res_list_id" />
+          <ScalarProperty Name="minquantity" ColumnName="minquantity" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="check_tax" ColumnName="check_tax" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="left_menu" ColumnName="left_menu" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="typo" ColumnName="typo" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="photo3" ColumnName="photo3" />
+          <ScalarProperty Name="photo2" ColumnName="photo2" />
+          <ScalarProperty Name="photo1" ColumnName="photo1" />
+          <ScalarProperty Name="stock_status" ColumnName="stock_status" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="small_image" ColumnName="small_image" />
+          <ScalarProperty Name="product_logo" ColumnName="product_logo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="band_name" ColumnName="band_name" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_old">
+      <EntityTypeMapping TypeName="ecommerce2Model.product_old">
+        <MappingFragment StoreEntitySet="product_old">
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="left_menu" ColumnName="left_menu" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="typo" ColumnName="typo" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="photo3" ColumnName="photo3" />
+          <ScalarProperty Name="photo2" ColumnName="photo2" />
+          <ScalarProperty Name="photo1" ColumnName="photo1" />
+          <ScalarProperty Name="stock_status" ColumnName="stock_status" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="small_image" ColumnName="small_image" />
+          <ScalarProperty Name="product_logo" ColumnName="product_logo" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="band_name" ColumnName="band_name" />
+          <ScalarProperty Name="company_id" ColumnName="company_id" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

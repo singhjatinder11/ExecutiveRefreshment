@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cf6a1197061448a7b579fcbc53b2cf7a" Name="Diagram1">
+        <EntityTypeShape EntityType="ecommerce2Model.cart" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.category" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.company" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.content" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.cronlog" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.cronlogsus" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.customer" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.customer_invoicing" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.damaged_item" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.driver" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.driver_final_order" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.driver_final_order_dtls" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.driver_final_order_dtls_temp" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.dt_module" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.dt_module_driver" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.dt_role" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.dt_state" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.dt_welcome" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.edit_module" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.email_attach" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.failedorders" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.final_order" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.final_order_dtls" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.final_order_dtls_temp" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.logo" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.logo_pages" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.manage_rentals" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.map" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.newsletter" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.noti_user" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.payment" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.payment_order" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.pre_final_order_dtls" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.pre_final_order_dtls_tmp" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.product_user_price" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.promo" Width="1.5" PointX="8.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.qblog" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.qblog_customer" Width="1.5" PointX="18.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.qblog_inventory" Width="1.5" PointX="18.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_config" Width="1.5" PointX="10.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_log" Width="1.5" PointX="12.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_oauth" Width="1.5" PointX="18.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_queue" Width="1.5" PointX="14.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_recur" Width="1.5" PointX="16.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_ticket" Width="1.5" PointX="18.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.quickbooks_user" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.rentals_item" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.revised_invoice" Width="1.5" PointX="2.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.sent_mail" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.service" Width="1.5" PointX="4.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.service_menu" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.shipping_address" Width="1.5" PointX="20.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.sub_service" Width="1.5" PointX="20.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.subscribe" Width="1.5" PointX="6.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.truck" Width="1.5" PointX="20.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.truck_inventory" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.truck_inventory_product" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.truck_maintenance" Width="1.5" PointX="22.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.truck_order" Width="1.5" PointX="8.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.truck_order_item" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.user" Width="1.5" PointX="22.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.user_hit_status" Width="1.5" PointX="16.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.users" Width="1.5" PointX="0.75" PointY="23.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.vendor" Width="1.5" PointX="12.75" PointY="23.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.vendor_item" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.product" Width="1.5" PointX="2.75" PointY="24.75" />
+        <EntityTypeShape EntityType="ecommerce2Model.product_old" Width="1.5" PointX="24.75" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

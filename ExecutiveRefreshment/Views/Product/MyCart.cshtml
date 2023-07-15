@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "My Cart";
+}
+
+<div ng-controller="ProductController">
+    <div class="bg_grey  ">
+
+        <div class="container">
+            <h2 class="float_left" style="font-size:30px;padding-left:15px;">My Cart</h2>
+            
+        </div>
+
+
+    </div>
+
+    <div class="row   " style="padding:4px;">
+        <div class="container">
+            
+
+            
+            <div class="add_card" style="width:100% !important;">
+                
+                
+
+                <p ng-hide="cartList.length>0" style="color:blue; font-size:18px; margin-left:20px;">Your Cart is empty !</p>
+                <p ng-if="CheckOutMessage.length>0" style="color:blue; font-size:18px; margin-left:20px;">{{CheckOutMessage}}</p>
+                <table class="table table-bordered bg_grey" ng-show="cartList.length>0" style="padding:10px; width:97% !important;   float:right; text-align:left;">
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Item </th>
+                            
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Update</th>
+                            <th>Remove</th>
+                        </tr>
+
+                        <tr ng-repeat="d in cartList">
+                            <td>{{$index+1}}</td>
+                            <td>{{d.Title}}</td>
+                             
+                            <td>{{d.Size}}</td>
+                            <td>${{d.Price}}</td>
+                            <td>
+
+                                <input type="number" style="width:40px;"     min="1"   ng-model="quantity" 
+                                       value="{{d.Quantity}}" />
+
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)" ng-click="updateCart(d.ID,quantity)">Update</a>
+                            </td>
+                            <td>
+                                <a href="javascript:void(0)" ng-click="removeCart(d.ID)">Remove</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table width="96%" border="0" style="padding:10px; margin-bottom:20px; float:right;">
+                    <tbody>
+                        <tr>
+                            <td width="340px" align="left">
+                            </td>
+                            <td align="right">
+                                <a href="javascript:void(0)"  class="btn btn-primary" ng-disabled="cartList.length<=0" ng-click="checkOut();">
+                                   {{checkOutButtonText}}
+                                </a>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+
+
+            <div class="product_item">
+
+
+                
+                
+            </div>
+
+        </div>
+    </div>
+
+</div>
+

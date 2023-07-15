@@ -1,0 +1,253 @@
+﻿ 
+@{
+    ViewBag.Title = "Invoice";
+    Layout = null;
+}
+ 
+    <table width="100%" border="0" cellspacing="1" cellpadding="1">
+
+        <tbody>
+            <tr>
+                <td colspan="3" height="38px" bgcolor="#dfe7e9">
+                    &nbsp;
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" height="5px" bgcolor="#f3f8f9"></td>
+            </tr>
+
+            <tr>
+                <td colspan="3" height="5px" bgcolor="#dfe7e9"></td>
+            </tr>
+
+            <!---->
+
+
+        </tbody>
+    </table>
+    @if(ViewBag.OrderItem != null) {
+
+    <table style="width:100%" cellpadding="0" cellspacing="0">
+
+        <tbody>
+            <tr>
+                <td width="40%" valign="top" style="border:#333333 0px solid">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                        <tbody>
+                            <tr>
+                                <td bgcolor="" style="font-size:18px"><img src="~/images/refreshment_logo.png">
+                                @*<br><span class="style1" style="color:#FF0000">This invoice is revised of<br>invoice# IN00000<br>Dated Dec 31, 1969</span>*@
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </td>
+                <td width="60%" valign="top">
+
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="" style="border:#333333 1px solid">
+                        <tbody>
+                            <tr>
+                                <td height="31" bgcolor="" style="color:#000000;border-right:#666666 1px solid; border-bottom:#666666 1px solid;"><strong><span class="style1" style="font-weight:bold; text-decoration:underline;">SHIPPING</span></strong></td>
+                                <td height="31" bgcolor="" style="color:#000000; border-bottom:#666666 1px solid;" align="right"><strong> <span class="style1" style="font-weight:bold; text-decoration:underline;">INVOICE</span></strong></td>
+                            </tr>
+                            <tr>
+                                <td width="50%" bgcolor="" valign="top" style="border-right:#666666 1px solid;">
+
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
+
+                                        <tbody>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td class="style1">Company : @ViewBag.User.company</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td class="style1">@ViewBag.User.f_name @ViewBag.User.l_name</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="6%">&nbsp;</td>
+                                                <td width="94%" class="style1">@ViewBag.User.address</td>
+                                            </tr>
+
+                                            
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td class="style1">Postal Code : @ViewBag.User.zip</td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td class="style1">Phone : @ViewBag.User.phone</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                                <td width="50%" bgcolor="" valign="top">
+
+                                    <table width="100%" border="0" cellspacing="1" cellpadding="0">
+
+
+
+
+
+
+                                        <tbody>
+                                            <tr>
+                                                <td width="7%" align="left" class="contentTxt">&nbsp;</td>
+                                                <td width="43%" align="left" class="contentTxt"><span class="style1">Order# : </span></td>
+                                                <td width="50%" align="left" class="contentTxt">&nbsp;@ViewBag.Order.id</td>
+                                            </tr>
+
+
+
+
+
+                                            <tr>
+                                                <td align="left" class="contentTxt">&nbsp;</td>
+                                                <td align="left" class="contentTxt">
+                                                    <span class="style1">
+                                                        Dated :
+                                                    </span>
+                                                </td>
+                                                <td align="left" class="contentTxt">&nbsp;@String.Format("{0:MMM dd, yyyy}",ViewBag.Order.order_date) </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" class="contentTxt">&nbsp;</td>
+                                                <td align="left" class="contentTxt">
+                                                    <span class="style1">
+                                                        PO# :
+                                                    </span>
+                                                </td>
+                                                <td align="left" class="contentTxt">&nbsp;@ViewBag.User.po_no</td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <table width="100%" border="0" style="border-top:#CCCCCC 1px solid;border-bottom:#CCCCCC 0px solid; " cellpadding="5" cellspacing="0">
+        <tbody>
+            <tr style="background-color:#dfe7e9">
+                <td width="14%" height="30" align="center" style="height:30px; border-right:#666666 1px solid; font-weight:bold">&nbsp;ITEM NO.</td>
+                <td width="27%" align="center" style="height:30px; border-right:#666666 1px solid; font-weight:bold">&nbsp;DESCRIPTION</td>
+                <td width="14%" align="center" style=" border-right:#666666 1px solid; font-weight:bold; cursor:pointer;">
+
+
+
+                    &nbsp;QUANTITY
+                </td>
+
+                <!--<td width="16%" align="center" style=" border-right:#666666 1px solid; font-weight:bold; cursor:pointer; " >
+
+                &nbsp;RATE ($) </td>
+
+                <td width="13%" align="center" style=" border-right:#666666 0px solid; font-weight:bold; cursor:pointer; " >&nbsp;	AMOUNT($) </td>-->
+            </tr>
+            @foreach(var d in ViewBag.OrderItem as List<ExecutiveRefreshment.Controllers.OrderItem> ) {
+            <tr >
+                <td width="14%" align="center" style="border-right:#666666 1px solid; font-weight:bold">
+                    @d.ID
+                </td>
+                <td width="27%" align="left" style="border-right:#666666 1px solid; font-weight:bold">
+                    @d.Title
+                </td>
+                <td width="14%" align="center" style=" border-right:#666666 1px solid; font-weight:bold; cursor:pointer;">
+                    @d.Quantity
+                </td>
+            </tr>
+            }
+
+
+
+            <!--<tr style="background-color:#FFFFFF;">
+            <td align="right" height="30" style="height:30px; border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+
+            <td align="center" height="30" style="height:30px; border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold"><input type="image" src="images/update.png" name="Update" title="Update" /></td>
+            <td align="right" height="30" style="height:30px; border-right:#666666 1px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold">Total : &nbsp;</td>
+            <td align="right" height="30" style="height:30px; border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;$ 0.00</td>
+            </tr>-->
+            <!--<tr style="background-color:#FFFFFF;">
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            <td align="right" style=" border-right:#666666 1px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold"> Sub Total($) : &nbsp;</td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 1px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            </tr>
+
+
+            <tr style="background-color:#FFFFFF;">
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            <td align="right" style=" border-right:#666666 1px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">Tax($) : &nbsp;</td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            </tr>-->
+            <!--<tr style="background-color:#FFFFFF;">
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            <td align="right" style=" border-right:#666666 1px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">Fuel Surcharge($) : &nbsp;</td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            </tr>-->
+            <!--<tr style="background-color:#FFFFFF;">
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold"></td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;</td>
+            <td align="right" style=" border-right:#666666 1px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">Invoice Total($) : &nbsp;</td>
+            <td align="right" style=" border-right:#666666 0px solid;  border-top:#666666 0px solid;  border-bottom:#666666 1px solid; font-weight:bold">&nbsp;0.00</td>
+            </tr>-->
+            <!--<tr style="background-color:#FFFFFF;">
+            <td align="left" colspan="5" style=" color:#00005B; border-right:#666666 0px solid; font-weight:bold">TERMS : NET 10/ Invoices over 90 days are subject to a 2% increase.
+
+
+            </td>
+            </tr>-->
+            <!--<tr style="background-color:#FFFFFF;">
+            <td align="left" height="30" colspan="5" style=" border-right:#666666 0px solid; font-weight:bold">&nbsp;</td>
+            </tr>-->
+        </tbody>
+    </table>
+    }
+    <table style="width:100%">
+        <!-- <tr>
+                                              <td width="23%" class="odd" valign="top">&nbsp;Customer Signature <font color="#FF0000"></font>:</td>
+                                              <td height="27" colspan="3" align="left" valign="top" class="odd">&nbsp;<div style=" background-color:#FFFFFF">&nbsp;<img src=""  style="max-height:200px; max-width:500px;"/></div></td>
+           </tr>-->
+
+        <tbody>
+            <tr>
+                <td height="27" colspan="4" align="center" valign="middle" class="" style="border-top:#dfe7e9 4px solid">Executive Refreshments<br>P O Box 12408, Dallas, TX 75225-0408,Phone: 214-696-0205, Fax: 214-221-0206</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script language="javascript">
+window.print();
+    </script>
+ 
+
+ 
+

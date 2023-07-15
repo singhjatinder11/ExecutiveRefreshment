@@ -1,0 +1,1234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ecommerce2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ecommerce2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cart" EntityType="ecommerce2Model.cart" />
+    <EntitySet Name="category" EntityType="ecommerce2Model.category" />
+    <EntitySet Name="company" EntityType="ecommerce2Model.company" />
+    <EntitySet Name="content" EntityType="ecommerce2Model.content" />
+    <EntitySet Name="cronlog" EntityType="ecommerce2Model.cronlog" />
+    <EntitySet Name="cronlogsus" EntityType="ecommerce2Model.cronlogsus" />
+    <EntitySet Name="customer" EntityType="ecommerce2Model.customer" />
+    <EntitySet Name="customer_invoicing" EntityType="ecommerce2Model.customer_invoicing" />
+    <EntitySet Name="damaged_item" EntityType="ecommerce2Model.damaged_item" />
+    <EntitySet Name="driver" EntityType="ecommerce2Model.driver" />
+    <EntitySet Name="driver_final_order" EntityType="ecommerce2Model.driver_final_order" />
+    <EntitySet Name="driver_final_order_dtls" EntityType="ecommerce2Model.driver_final_order_dtls" />
+    <EntitySet Name="driver_final_order_dtls_temp" EntityType="ecommerce2Model.driver_final_order_dtls_temp" />
+    <EntitySet Name="dt_module" EntityType="ecommerce2Model.dt_module" />
+    <EntitySet Name="dt_module_driver" EntityType="ecommerce2Model.dt_module_driver" />
+    <EntitySet Name="dt_role" EntityType="ecommerce2Model.dt_role" />
+    <EntitySet Name="dt_state" EntityType="ecommerce2Model.dt_state" />
+    <EntitySet Name="dt_welcome" EntityType="ecommerce2Model.dt_welcome" />
+    <EntitySet Name="edit_module" EntityType="ecommerce2Model.edit_module" />
+    <EntitySet Name="email_attach" EntityType="ecommerce2Model.email_attach" />
+    <EntitySet Name="failedorders" EntityType="ecommerce2Model.failedorders" />
+    <EntitySet Name="final_order" EntityType="ecommerce2Model.final_order" />
+    <EntitySet Name="final_order_dtls" EntityType="ecommerce2Model.final_order_dtls" />
+    <EntitySet Name="final_order_dtls_temp" EntityType="ecommerce2Model.final_order_dtls_temp" />
+    <EntitySet Name="logo" EntityType="ecommerce2Model.logo" />
+    <EntitySet Name="logo_pages" EntityType="ecommerce2Model.logo_pages" />
+    <EntitySet Name="manage_rentals" EntityType="ecommerce2Model.manage_rentals" />
+    <EntitySet Name="map" EntityType="ecommerce2Model.map" />
+    <EntitySet Name="newsletter" EntityType="ecommerce2Model.newsletter" />
+    <EntitySet Name="noti_user" EntityType="ecommerce2Model.noti_user" />
+    <EntitySet Name="payment" EntityType="ecommerce2Model.payment" />
+    <EntitySet Name="payment_order" EntityType="ecommerce2Model.payment_order" />
+    <EntitySet Name="pre_final_order_dtls" EntityType="ecommerce2Model.pre_final_order_dtls" />
+    <EntitySet Name="pre_final_order_dtls_tmp" EntityType="ecommerce2Model.pre_final_order_dtls_tmp" />
+    <EntitySet Name="product_user_price" EntityType="ecommerce2Model.product_user_price" />
+    <EntitySet Name="promo" EntityType="ecommerce2Model.promo" />
+    <EntitySet Name="qblog" EntityType="ecommerce2Model.qblog" />
+    <EntitySet Name="qblog_customer" EntityType="ecommerce2Model.qblog_customer" />
+    <EntitySet Name="qblog_inventory" EntityType="ecommerce2Model.qblog_inventory" />
+    <EntitySet Name="quickbooks_config" EntityType="ecommerce2Model.quickbooks_config" />
+    <EntitySet Name="quickbooks_log" EntityType="ecommerce2Model.quickbooks_log" />
+    <EntitySet Name="quickbooks_oauth" EntityType="ecommerce2Model.quickbooks_oauth" />
+    <EntitySet Name="quickbooks_queue" EntityType="ecommerce2Model.quickbooks_queue" />
+    <EntitySet Name="quickbooks_recur" EntityType="ecommerce2Model.quickbooks_recur" />
+    <EntitySet Name="quickbooks_ticket" EntityType="ecommerce2Model.quickbooks_ticket" />
+    <EntitySet Name="quickbooks_user" EntityType="ecommerce2Model.quickbooks_user" />
+    <EntitySet Name="rentals_item" EntityType="ecommerce2Model.rentals_item" />
+    <EntitySet Name="revised_invoice" EntityType="ecommerce2Model.revised_invoice" />
+    <EntitySet Name="sent_mail" EntityType="ecommerce2Model.sent_mail" />
+    <EntitySet Name="service" EntityType="ecommerce2Model.service" />
+    <EntitySet Name="service_menu" EntityType="ecommerce2Model.service_menu" />
+    <EntitySet Name="shipping_address" EntityType="ecommerce2Model.shipping_address" />
+    <EntitySet Name="sub_service" EntityType="ecommerce2Model.sub_service" />
+    <EntitySet Name="subscribe" EntityType="ecommerce2Model.subscribe" />
+    <EntitySet Name="truck" EntityType="ecommerce2Model.truck" />
+    <EntitySet Name="truck_inventory" EntityType="ecommerce2Model.truck_inventory" />
+    <EntitySet Name="truck_inventory_product" EntityType="ecommerce2Model.truck_inventory_product" />
+    <EntitySet Name="truck_maintenance" EntityType="ecommerce2Model.truck_maintenance" />
+    <EntitySet Name="truck_order" EntityType="ecommerce2Model.truck_order" />
+    <EntitySet Name="truck_order_item" EntityType="ecommerce2Model.truck_order_item" />
+    <EntitySet Name="user" EntityType="ecommerce2Model.user" />
+    <EntitySet Name="user_hit_status" EntityType="ecommerce2Model.user_hit_status" />
+    <EntitySet Name="users" EntityType="ecommerce2Model.users" />
+    <EntitySet Name="vendor" EntityType="ecommerce2Model.vendor" />
+    <EntitySet Name="vendor_item" EntityType="ecommerce2Model.vendor_item" />
+    <EntitySet Name="product" EntityType="ecommerce2Model.product" />
+    <EntitySet Name="product_old" EntityType="ecommerce2Model.product_old" />
+  </EntityContainer>
+  <EntityType Name="cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="session_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ListID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EditSequence" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cronlog">
+    <Key>
+      <PropertyRef Name="CLID" />
+    </Key>
+    <Property Name="CLID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RentalId" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" />
+    <Property Name="Mode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TxnId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FinalOrderId" Type="Int32" />
+    <Property Name="Res" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cronlogsus">
+    <Key>
+      <PropertyRef Name="CLSId" />
+    </Key>
+    <Property Name="CLSId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" />
+    <Property Name="Res" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CLID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zipcode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="profile" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="cust_com_l" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="res_list_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="customer_invoicing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="damaged_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pro_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="how_it_happen" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="who_is_responsible" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="submitter" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="type_d" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="value_d" Type="Decimal" Nullable="false" />
+    <Property Name="rep_sub_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="driver">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="f_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="l_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address2" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="licence" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="inactive" Type="Int64" Nullable="false" />
+    <Property Name="truck" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="security_question" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="security_answer" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="exp_date" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="DateTime" Nullable="false" />
+    <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="home_phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="hire_dt" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver_final_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="tax" Type="Decimal" Nullable="false" />
+    <Property Name="total_amount" Type="Decimal" Nullable="false" />
+    <Property Name="paid_on" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="delievery_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="payment_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" />
+    <Property Name="sign" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="order_updated" Type="Int64" Nullable="false" />
+    <Property Name="quickbook_invoice_check" Type="Int32" Nullable="false" />
+    <Property Name="quickbook_payment_check" Type="Int32" Nullable="false" />
+    <Property Name="qb_o_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="po" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="truck_no" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="driver_final_order_dtls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cart_id" Type="Int64" Nullable="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price_update" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="driver_final_order_dtls_temp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cart_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price_update" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_module">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="truck" Type="Int32" Nullable="false" />
+    <Property Name="truck_add" Type="Int32" Nullable="false" />
+    <Property Name="truck_edit" Type="Int32" Nullable="false" />
+    <Property Name="truck_delete" Type="Int32" Nullable="false" />
+    <Property Name="driver" Type="Int32" Nullable="false" />
+    <Property Name="driver_add" Type="Int32" Nullable="false" />
+    <Property Name="driver_edit" Type="Int32" Nullable="false" />
+    <Property Name="driver_delete" Type="Int32" Nullable="false" />
+    <Property Name="inventory" Type="Int32" Nullable="false" />
+    <Property Name="inventory_add" Type="Int32" Nullable="false" />
+    <Property Name="inventory_edit" Type="Int32" Nullable="false" />
+    <Property Name="inventory_delete" Type="Int32" Nullable="false" />
+    <Property Name="order" Type="Int32" Nullable="false" />
+    <Property Name="order_add" Type="Int32" Nullable="false" />
+    <Property Name="order_edit" Type="Int32" Nullable="false" />
+    <Property Name="order_delete" Type="Int32" Nullable="false" />
+    <Property Name="invoice" Type="Int32" Nullable="false" />
+    <Property Name="invoice_add" Type="Int32" Nullable="false" />
+    <Property Name="invoice_edit" Type="Int32" Nullable="false" />
+    <Property Name="invoice_delete" Type="Int32" Nullable="false" />
+    <Property Name="customer" Type="Int32" Nullable="false" />
+    <Property Name="customer_add" Type="Int32" Nullable="false" />
+    <Property Name="customer_edit" Type="Int32" Nullable="false" />
+    <Property Name="customer_delete" Type="Int32" Nullable="false" />
+    <Property Name="order_qb" Type="Int64" Nullable="false" />
+    <Property Name="invoice_qb" Type="Int64" Nullable="false" />
+    <Property Name="customer_qb" Type="Int64" Nullable="false" />
+    <Property Name="emp" Type="Int32" Nullable="false" />
+    <Property Name="emp_add" Type="Int32" Nullable="false" />
+    <Property Name="emp_edit" Type="Int32" Nullable="false" />
+    <Property Name="emp_delete" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_module_driver">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="my_profile" Type="Int32" Nullable="false" />
+    <Property Name="my_profile_add" Type="Int32" Nullable="false" />
+    <Property Name="my_profile_edit" Type="Int32" Nullable="false" />
+    <Property Name="my_profile_delete" Type="Int32" Nullable="false" />
+    <Property Name="order_dtl" Type="Int32" Nullable="false" />
+    <Property Name="order_dtl_add" Type="Int32" Nullable="false" />
+    <Property Name="order_dtl_edit" Type="Int32" Nullable="false" />
+    <Property Name="order_dtl_delete" Type="Int32" Nullable="false" />
+    <Property Name="truck_inventory" Type="Int32" Nullable="false" />
+    <Property Name="truck_inventory_add" Type="Int32" Nullable="false" />
+    <Property Name="truck_inventory_edit" Type="Int32" Nullable="false" />
+    <Property Name="truck_inventory_delete" Type="Int32" Nullable="false" />
+    <Property Name="inventory" Type="Int32" Nullable="false" />
+    <Property Name="inventory_add" Type="Int32" Nullable="false" />
+    <Property Name="inventory_edit" Type="Int32" Nullable="false" />
+    <Property Name="inventory_delete" Type="Int32" Nullable="false" />
+    <Property Name="add_order" Type="Int32" Nullable="false" />
+    <Property Name="add_order_add" Type="Int32" Nullable="false" />
+    <Property Name="add_order_edit" Type="Int32" Nullable="false" />
+    <Property Name="add_order_delete" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dt_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dt_state">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="state_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="dt_welcome">
+    <Key>
+      <PropertyRef Name="title" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chk_value" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="edit_module">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="category" Type="Int32" Nullable="false" />
+    <Property Name="inventory" Type="Int32" Nullable="false" />
+    <Property Name="user_setup" Type="Int32" Nullable="false" />
+    <Property Name="purchase" Type="Int32" Nullable="false" />
+    <Property Name="customer_rentals" Type="Int32" Nullable="false" />
+    <Property Name="return_tool" Type="Int32" Nullable="false" />
+    <Property Name="mobile_tool" Type="Int32" Nullable="false" />
+    <Property Name="tax" Type="Int32" Nullable="false" />
+    <Property Name="exchange" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="email_attach">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="image_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="failedorders">
+    <Key>
+      <PropertyRef Name="FOId" />
+    </Key>
+    <Property Name="FOId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" />
+    <Property Name="Mode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="FinalOrderDetails_CartId" Type="Int64" />
+  </EntityType>
+  <EntityType Name="final_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="tax" Type="Decimal" Nullable="false" />
+    <Property Name="total_amount" Type="Decimal" Nullable="false" />
+    <Property Name="paid_on" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="delievery_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="payment_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" />
+    <Property Name="sign" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="order_updated" Type="Int64" Nullable="false" />
+    <Property Name="quickbook_invoice_check" Type="Int32" Nullable="false" />
+    <Property Name="quickbook_payment_check" Type="Int32" Nullable="false" />
+    <Property Name="qb_o_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="po" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="send" Type="Int32" Nullable="false" />
+    <Property Name="invoice" Type="Int32" Nullable="false" />
+    <Property Name="order_id" Type="Int64" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="fs" Type="Decimal" Nullable="false" />
+    <Property Name="get_id_r" Type="Int64" Nullable="false" />
+    <Property Name="TxnId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EditSequence" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="rental_check" Type="Int64" Nullable="false" />
+    <Property Name="from_customer" Type="Int64" Nullable="false" />
+    <Property Name="rental_from" Type="DateTime" />
+    <Property Name="rental_to" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="final_order_dtls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cart_id" Type="Int64" Nullable="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price_update" Type="Int32" Nullable="false" />
+    <Property Name="pending_qty" Type="Int64" Nullable="false" />
+    <Property Name="minus_qty" Type="Int64" Nullable="false" />
+    <Property Name="left_qty" Type="Int64" Nullable="false" />
+    <Property Name="original" Type="Int64" Nullable="false" />
+    <Property Name="TxnLineId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EditSequence" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="final_order_dtls_temp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cart_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price_update" Type="Int32" Nullable="false" />
+    <Property Name="pending_qty" Type="Int64" Nullable="false" />
+    <Property Name="minus_qty" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="logo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="service_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="home_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="logo_pages">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="page" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="service_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="manage_rentals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_date" Type="DateTime" Nullable="false" />
+    <Property Name="lease_no" Type="Int64" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zipcode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="publish" Type="Int64" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="invoice_period" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_start_date" Type="DateTime" Nullable="false" />
+    <Property Name="next_invoice" Type="DateTime" Nullable="false" />
+    <Property Name="tax" Type="Decimal" Nullable="false" />
+    <Property Name="check_tax" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email_date" Type="DateTime" Nullable="false" />
+    <Property Name="po" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="map">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="latitude" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="truck_id" Type="Int64" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="newsletter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="content" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="added_on" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="start_dt" Type="DateTime" Nullable="false" />
+    <Property Name="end_dt" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="noti_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="check_val" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="payment_type" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cheque_no" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cheque_dtl" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cash_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cash_phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cc_number" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cc_type" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cc_user_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="expiry_date" Type="DateTime" Nullable="false" />
+    <Property Name="total_amount" Type="Decimal" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="payment_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="order_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pre_final_order_dtls">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price_update" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cust_p" Type="Decimal" Nullable="false" />
+    <Property Name="pro_title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pre_final_order_dtls_tmp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sale_price" Type="Decimal" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="total" Type="Decimal" Nullable="false" />
+    <Property Name="design_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price_update" Type="Int32" Nullable="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cust_p" Type="Decimal" Nullable="false" />
+    <Property Name="pro_title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product_user_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="promo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" />
+    <Property Name="promo_code" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="start_date" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="end_date" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="qblog">
+    <Key>
+      <PropertyRef Name="QBLogId" />
+    </Key>
+    <Property Name="QBLogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="Successful" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Error" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Errors" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Response" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="ResponseCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" />
+    <Property Name="InvoiceNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="qblog_customer">
+    <Key>
+      <PropertyRef Name="QBCLogId" />
+    </Key>
+    <Property Name="QBCLogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="Successful" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Error" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Errors" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Response" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" />
+    <Property Name="Mode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="qblog_inventory">
+    <Key>
+      <PropertyRef Name="QBILogId" />
+    </Key>
+    <Property Name="QBILogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Successful" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Error" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Errors" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="Response" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" />
+    <Property Name="Mode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_config">
+    <Key>
+      <PropertyRef Name="quickbooks_config_id" />
+    </Key>
+    <Property Name="quickbooks_config_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="qb_username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="module" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="cfgkey" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="cfgval" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="cfgtype" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="cfgopts" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="write_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="mod_datetime" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_log">
+    <Key>
+      <PropertyRef Name="quickbooks_log_id" />
+    </Key>
+    <Property Name="quickbooks_log_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quickbooks_ticket_id" Type="Int64" />
+    <Property Name="batch" Type="Int64" Nullable="false" />
+    <Property Name="msg" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="log_datetime" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_oauth">
+    <Key>
+      <PropertyRef Name="quickbooks_oauth_id" />
+    </Key>
+    <Property Name="quickbooks_oauth_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="app_username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="app_tenant" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="oauth_request_token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="oauth_request_token_secret" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="oauth_access_token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="oauth_access_token_secret" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="qb_realm" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="qb_flavor" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="qb_user" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="request_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="access_datetime" Type="DateTime" />
+    <Property Name="touch_datetime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="quickbooks_queue">
+    <Key>
+      <PropertyRef Name="quickbooks_queue_id" />
+    </Key>
+    <Property Name="quickbooks_queue_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quickbooks_ticket_id" Type="Int64" />
+    <Property Name="qb_username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="qb_action" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ident" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="extra" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="qbxml" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="priority" Type="Int64" />
+    <Property Name="qb_status" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="msg" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="enqueue_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="dequeue_datetime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="quickbooks_recur">
+    <Key>
+      <PropertyRef Name="quickbooks_recur_id" />
+    </Key>
+    <Property Name="quickbooks_recur_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="qb_username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="qb_action" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ident" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="extra" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="qbxml" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="priority" Type="Int64" />
+    <Property Name="run_every" Type="Int64" Nullable="false" />
+    <Property Name="recur_lasttime" Type="Int64" Nullable="false" />
+    <Property Name="enqueue_datetime" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_ticket">
+    <Key>
+      <PropertyRef Name="quickbooks_ticket_id" />
+    </Key>
+    <Property Name="quickbooks_ticket_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="qb_username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ticket" Type="Guid" Nullable="false" />
+    <Property Name="processed" Type="Int64" />
+    <Property Name="lasterror_num" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="lasterror_msg" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ipaddr" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="write_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="touch_datetime" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="quickbooks_user">
+    <Key>
+      <PropertyRef Name="qb_username" />
+    </Key>
+    <Property Name="qb_username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="qb_password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="qb_company_file" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="qbwc_wait_before_next_update" Type="Int64" />
+    <Property Name="qbwc_min_run_every_n_seconds" Type="Int64" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="write_datetime" Type="DateTime" Nullable="false" />
+    <Property Name="touch_datetime" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rentals_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rental_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="item_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="item_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cust_rent" Type="Decimal" Nullable="false" />
+    <Property Name="term" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="rental_start_date" Type="DateTime" Nullable="false" />
+    <Property Name="rental_end_date" Type="DateTime" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="revised_invoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_no_old" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_no_new" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sent_mail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="sub" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rank" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service_menu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="rank" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="shipping_address">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cart_id" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="session_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="fname_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="lname_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address1_ship" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="address2_ship" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="city_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="state_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pin_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="country_ship" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="name_sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="email_sender" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address1_sender" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="address2_sender" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="city_sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="state_sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pin_sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="phone_sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="country_sender" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sub_service">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_id" Type="Int64" Nullable="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="video" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="added_on" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="radio" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="subscribe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="truck">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="truck_no" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="made" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="model" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="year" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="mileage" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="purchased_from" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="company_cost" Type="Decimal" Nullable="false" />
+    <Property Name="purchased_date" Type="DateTime" Nullable="false" />
+    <Property Name="condition" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="inactive" Type="Int64" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="lp" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="vin" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="truck_inventory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="truck_id" Type="Int64" Nullable="false" />
+    <Property Name="driver_id" Type="Int64" Nullable="false" />
+    <Property Name="shipping_date" Type="DateTime" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_inventory_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="truck_inventory_id" Type="Int64" Nullable="false" />
+    <Property Name="service" Type="Int64" Nullable="false" />
+    <Property Name="category" Type="Int64" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+    <Property Name="customer_id" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="truck_maintenance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="out_of_service" Type="Int64" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="mileage" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="m_date" Type="DateTime" Nullable="false" />
+    <Property Name="m_type" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="service_company" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cost" Type="Decimal" Nullable="false" />
+    <Property Name="paid_by" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="m_by" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="m_comment" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="truck_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="truck_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="truck_id" Type="Int64" Nullable="false" />
+    <Property Name="driver_id" Type="Int64" Nullable="false" />
+    <Property Name="shipping_date" Type="DateTime" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="truck_order_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="truck_order_id" Type="Int64" Nullable="false" />
+    <Property Name="order_id" Type="Int64" Nullable="false" />
+    <Property Name="user_id" Type="Int64" Nullable="false" />
+    <Property Name="total_amount" Type="Decimal" Nullable="false" />
+    <Property Name="order_date" Type="DateTime" Nullable="false" />
+    <Property Name="truck_id" Type="Int64" Nullable="false" />
+    <Property Name="driver_id" Type="Int64" Nullable="false" />
+    <Property Name="shipping_date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="f_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="l_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="address2" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="place" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="publish" Type="Int32" Nullable="false" />
+    <Property Name="photo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="shop_id" Type="Int32" Nullable="false" />
+    <Property Name="num_list" Type="Int32" Nullable="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pin" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="merchant_acct" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="auth_login_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="auth_trans_key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contact_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contact_position" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contact_email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="contact_phone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="qb_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="quickbook_check" Type="Int32" Nullable="false" />
+    <Property Name="customer_invoice" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fax" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fs" Type="Decimal" Nullable="false" />
+    <Property Name="master_cust" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="billing_address" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="billing_address2" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ChainStoreNum" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="Area" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="CreditClass" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="CreditLimt" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="TaxAuth" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="TaxStatus" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="PriceList" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="DateLastDelv" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="HHinvoiceCopies" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="Business" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="Acquisition" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="PurchOrder" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="NextDelvDate" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="quickbooks_listid" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="quickbooks_editsequence" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="quickbooks_errnum" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="quickbooks_errmsg" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ListID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EditSequence" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="check_tax" Type="Int64" Nullable="false" />
+    <Property Name="cust_com_l" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="res_list_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="po_no" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="user_hit_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="page" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ip_address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="hit_count" Type="Int64" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="pass" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="ind_id" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="inactive" Type="Int32" Nullable="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="lname" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="tax" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="address2" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="zip" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="licence" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="security_question" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="security_answer" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="exp_date" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="dob" Type="DateTime" Nullable="false" />
+    <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="home_phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="hire_dt" Type="DateTime" Nullable="false" />
+    <Property Name="position" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vendor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="com_from" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="com_add" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="com_city" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="com_zip" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="com_phone" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="com_qua" Type="Int64" Nullable="false" />
+    <Property Name="com_date" Type="DateTime" Nullable="false" />
+    <Property Name="com_price" Type="Decimal" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="product_id" Type="Int64" Nullable="false" />
+    <Property Name="sku" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="pur_name" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vendor_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sku" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="product_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="qty" Type="Int64" Nullable="false" />
+    <Property Name="cost" Type="Decimal" Nullable="false" />
+    <Property Name="date_time" Type="DateTime" Nullable="false" />
+    <Property Name="pr_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="qty_in" Type="Int64" Nullable="false" />
+    <Property Name="vendor_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="cat_id" />
+      <PropertyRef Name="company_id" />
+      <PropertyRef Name="band_name" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="product_logo" />
+      <PropertyRef Name="small_image" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="size" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="stock_status" />
+      <PropertyRef Name="photo1" />
+      <PropertyRef Name="photo2" />
+      <PropertyRef Name="photo3" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="typo" />
+      <PropertyRef Name="website" />
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="sku" />
+      <PropertyRef Name="left_menu" />
+      <PropertyRef Name="quantity" />
+      <PropertyRef Name="check_tax" />
+      <PropertyRef Name="tax" />
+      <PropertyRef Name="minquantity" />
+      <PropertyRef Name="res_list_id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="service_id" Type="Int32" Nullable="false" />
+    <Property Name="cat_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="company_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="band_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="product_logo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="small_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="stock_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="photo1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="photo2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="photo3" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="typo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="website" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="item_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sku" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="left_menu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="check_tax" Type="Int32" Nullable="false" />
+    <Property Name="tax" Type="String" Nullable="false" MaxLength="225" FixedLength="false" Unicode="false" />
+    <Property Name="minquantity" Type="Int64" Nullable="false" />
+    <Property Name="res_list_id" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="product_old">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="cat_id" />
+      <PropertyRef Name="company_id" />
+      <PropertyRef Name="band_name" />
+      <PropertyRef Name="title" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="product_logo" />
+      <PropertyRef Name="small_image" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="size" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="stock_status" />
+      <PropertyRef Name="photo1" />
+      <PropertyRef Name="photo2" />
+      <PropertyRef Name="photo3" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="typo" />
+      <PropertyRef Name="website" />
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="sku" />
+      <PropertyRef Name="left_menu" />
+      <PropertyRef Name="quantity" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="service_id" Type="Int32" Nullable="false" />
+    <Property Name="cat_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="company_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="band_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="product_logo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="small_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" />
+    <Property Name="size" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="stock_status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="photo1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="photo2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="photo3" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="typo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="website" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="item_id" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sku" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="left_menu" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="quantity" Type="Int64" Nullable="false" />
+  </EntityType>
+</Schema>

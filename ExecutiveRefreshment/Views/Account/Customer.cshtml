@@ -1,0 +1,320 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+@model ExecutiveRefreshment.Models.UserModel
+@{
+    ViewBag.Title = "Customer";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/fonts.css">
+<link rel="stylesheet" type="text/css" href="~/Content/regAndForgPass.css">
+<div  ng-controller="CustomerController">
+    <div class="bg_grey">
+        <div class="container">
+            <h4 class="float_left">My Account</h4>
+             
+        </div>
+
+
+    </div>
+    <div class="container" style="border:1px solid #ddd; padding:0px;">
+         
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#profile">Profile</a></li>
+            <li><a data-toggle="tab" href="#orders">Orders</a></li>
+            
+        </ul>
+
+        <div class="tab-content" style="padding:5px;" >
+            <div id="profile" class="tab-pane fade in active">
+                 
+                <div id="containeer">
+                    @if (ViewBag.Success != null)
+                    {
+                        <div class="wel regSucc">
+                            <p>PROFILE UPDATED SUCCESSFULLY!</p>
+                        </div>
+                    }
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(a => a.id);
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label for="first-name">Customer ID<span></span></label>
+                                @Html.TextBoxFor(a => Model.id, null, new { @class = "form-control formCSS formCSS2", @readonly = "readonly" })
+                                @*<label for="first-name"><b>@Model.id</b><span></span></label>*@
+                                @*<input type="text" class="form-control formCSS formCSS2" id="f_name" name="f_name" ng-model="user.f_name" required>*@
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="company-name">Added On</label> 
+                                @Html.TextBoxFor(a => Model.date, null, new { @class = "form-control formCSS formCSS2", @readonly = "readonly" })
+                                @*<label for="first-name"><b>@String.Format("{0:MMM dd, yyyy}",Model.date)</b><span></span></label>*@
+                              
+                            </div>
+                            
+                        </div><!-- -->
+
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label for="first-name">First Name<span>*</span></label>
+                                @Html.TextBoxFor(a=>a.f_name,null,new {@class= "form-control formCSS formCSS2",@required= "required" })
+                     @*<input type="text" class="form-control formCSS formCSS2" id="f_name" name="f_name" ng-model="user.f_name" required>*@
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="company-name">Company Name<span>*</span></label>
+                                @*<input type="text" class="form-control formCSS formCSS2" id="company" name="company" ng-model="user.company" required>*@
+                                @Html.TextBoxFor(a => a.company, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="email">Email<span>*</span></label>
+                                @*<input type="email" class="form-control formCSS formCSS2" name="email" ng-model="user.email" id="email" required>*@
+                                @Html.TextBoxFor(a => a.email, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                            </div>
+                        </div><!-- -->
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label for="last-name">Last Name<span>*</span></label>
+                                @*<input type="text" ng-model="user.l_name" class="form-control formCSS formCSS2" name="l_name" id="l_name" required>*@
+                                 @Html.TextBoxFor(a=>a.l_name,null,new { @class = "form-control formCSS formCSS2", @required = "required" })
+                            </div>
+
+                            <div class="col-lg-4">
+                                <label for="user-name">User Name<span>*</span></label>
+                                @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.user_name" name="user_name" id="user_name" required>*@
+                                @Html.TextBoxFor(a => a.user_name, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                            </div>
+                            <div class="col-lg-4">
+                                <label for="user-name">User Type<span>*</span></label>
+                                @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.user_name" name="user_name" id="user_name" required>*@
+                                @Html.TextBoxFor(a => a.user_type, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                            </div>
+                           
+                        </div><!-- -->
+                        @*<div class="row">
+                            <div class="col-lg-4">
+                                <label for="email">Email<span>*</span></label>
+                                <input type="email" class="form-control formCSS formCSS2" name="email" ng-model="user.email" id="email" required>
+                                @Html.TextBoxFor(a => a.email, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                            </div>
+                            
+                        </div>*@<!-- -->
+                        <div class="second">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="contact-name">Contact Name</label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" name="contact_name" ng-model="user.contact_name" id="contact_name">*@
+                                    @Html.TextBoxFor(a => a.contact_name, null, new { @class = "form-control formCSS formCSS2" })
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="contact-email">Contact Email</label>
+                                    @Html.TextBoxFor(a => a.contact_email, null, new { @class = "form-control formCSS formCSS2", @type = "email" })
+                                    @*<input type="email" class="form-control formCSS formCSS2" name="contact_email" ng-model="user.contact_email" id="contact_email">*@
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="mobile-number">Mobile Number<span>*</span></label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" name="phone" id="phone" ng-model="user.phone" required>*@
+                                    @Html.TextBoxFor(a => a.phone, null, new { @class = "form-control formCSS formCSS2" ,@required="required" })
+                                </div>
+                            </div><!-- -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="contact-position">Contact Position</label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.contact_position" name="contact_position" id="contact_position">*@
+                                    @Html.TextBoxFor(a => a.contact_position, null, new { @class = "form-control formCSS formCSS2" })
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="contact-phone">Contact Phone</label>
+                                    @Html.TextBoxFor(a => a.contact_phone, null, new { @class = "form-control formCSS formCSS2" })
+                                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.contact_phone" name="contact_phone" id="contact_phone">*@
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="contact-phone">Fax</label>
+                                    @Html.TextBoxFor(a => a.fax, null, new { @class = "form-control formCSS formCSS2" })
+                                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.contact_phone" name="contact_phone" id="contact_phone">*@
+                                </div>
+                            </div><!-- -->
+                        </div>
+
+
+                         
+
+                        <div class="third">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="adress1">Adress 1<span>*</span></label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.address" name="address" id="address" required>*@
+                                    @Html.TextAreaFor(a => a.address,  new { @class = "form-control formCSS formCSS2", @required = "required" })
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="city">City<span>*</span></label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.city" id="city" name="city" required>*@
+                                    @Html.TextBoxFor(a => a.city, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="postal-code">Postal Code<span>*</span></label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" id="pin" ng-model="user.pin" name="pin" required="">*@
+                                    @Html.TextBoxFor(a => a.pin, null, new { @class = "form-control formCSS formCSS2", @required = "required" })
+                                </div>
+
+                            </div><!-- -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="adress2">Adress 2</label>
+                                    @*<input type="text" class="form-control formCSS formCSS2" ng-model="user.address2" id="address2" name="address2">*@
+                                    @Html.TextAreaFor(a => a.address2, new { @class = "form-control formCSS formCSS2"  })
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="state">State<span>*</span></label>
+                                    <select name="state" id="state" class="form-control formCSS formCSS2"   required>
+                                        <option value="">Select State</option>
+                                        <option value="Alabama">Alabama</option>
+                                        <option value="Alaska">Alaska</option>
+                                        <option value="Arizona">Arizona</option>
+                                        <option value="Arkansas">Arkansas</option>
+                                        <option value="California">California</option>
+                                        <option value="Colorado">Colorado</option>
+                                        <option value="Connecticut">Connecticut</option>
+                                        <option value="Delaware">Delaware</option>
+                                        <option value="District Of Columbia">District Of Columbia</option>
+                                        <option value="Florida">Florida</option>
+                                        <option value="Georgia">Georgia</option>
+                                        <option value="Hawaii">Hawaii</option>
+                                        <option value="Idaho">Idaho</option>
+                                        <option value="Illinois">Illinois</option>
+                                        <option value="Indiana">Indiana</option>
+                                        <option value="Iowa">Iowa</option>
+                                        <option value="Kansas">Kansas</option>
+                                        <option value="Kentucky">Kentucky</option>
+                                        <option value="Louisiana">Louisiana</option>
+                                        <option value="Maine">Maine</option>
+                                        <option value="Maryland">Maryland</option>
+                                        <option value="Massachusetts">Massachusetts</option>
+                                        <option value="Michigan">Michigan</option>
+                                        <option value="Minnesota">Minnesota</option>
+                                        <option value="Mississippi">Mississippi</option>
+                                        <option value="Missouri">Missouri</option>
+                                        <option value="Montana">Montana</option>
+                                        <option value="Nebraska">Nebraska</option>
+                                        <option value="Nevada">Nevada</option>
+                                        <option value="New Hampshire">New Hampshire</option>
+                                        <option value="New Jersey">New Jersey</option>
+                                        <option value="New Mexico">New Mexico</option>
+                                        <option value="New York">New York</option>
+                                        <option value="North Carolina">North Carolina</option>
+                                        <option value="North Dakota">North Dakota</option>
+                                        <option value="Ohio">Ohio</option>
+                                        <option value="Oklahoma">Oklahoma</option>
+                                        <option value="Oregon">Oregon</option>
+                                        <option value="Others">Others</option>
+                                        <option value="outh Dakota">outh Dakota</option>
+                                        <option value="Pennsylvania">Pennsylvania</option>
+                                        <option value="Puerto Rico">Puerto Rico</option>
+                                        <option value="Rhode Island">Rhode Island</option>
+                                        <option value="South Carolina">South Carolina</option>
+                                        <option value="Tennessee">Tennessee</option>
+                                        <option value="Texas">Texas</option>
+                                        <option value="Utah">Utah</option>
+                                        <option value="Vermont">Vermont</option>
+                                        <option value="Virginia">Virginia</option>
+                                        <option value="Washington">Washington</option>
+                                        <option value="West Virginia">West Virginia</option>
+                                        <option value="Wisconsin">Wisconsin</option>
+                                        <option value="Wyoming">Wyoming</option>
+                                    </select>
+                                    @*<input type="text" class="form-control formCSS formCSS2" id="state" required>*@
+                                </div>
+                                @*<div class="col-lg-4">
+
+                                    <div class="col-md-5">
+                                        @Html.MathCaptcha()
+
+                                        <p style="color:red;">  @ViewBag.ErrMessage </p>
+                                    </div>
+                                </div>*@
+                                <div class="col-md-6" align="right">
+                                    <button type="submit" onclick="return validate();" name="update" id="update" class="btn btn-lg btn-warning">Update</button>
+                                </div>
+                                </div><!-- -->
+
+                            
+                        </div>
+                       
+                    }
+                    
+                </div>
+            </div>
+
+            <div id="orders" class="tab-pane fade" >
+                <div style="min-height:350px;overflow:auto">
+                    <table class="table table-bordered bg_grey" ng-show="orderList.length>0" style="padding:10px; width:100% !important; margin-bottom:20px; float:right; text-align:left;">
+                        <tbody>
+                            <tr>
+                                <th>Order Date </th>
+                                <th>Order ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+
+                                <th></th>
+                            </tr>
+
+                            <tr ng-repeat="d in orderList">
+                                <td>{{ d.order_date.replace('/Date(','').replace(')/','') | date:"MM-dd-yyyy hh:mm a"  }}</td>
+                                <td>{{d.id}}</td>
+                                <td>${{d.total_amount}}</td>
+                                <td>
+
+                                    {{d.delievery_status}}
+                                </td>
+                                <td>
+                                    <button id="{{d.id}}" class="btn btn-xs btn-primary" onclick="popup(this)">Invoice</button>
+                                    @*<a id="{{d.id}}" href="javascript:void(0)" class="btn btn-xs btn-primary" onclick="popup(this)">View Details</a>*@
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<script type="text/javascript">
+
+        function validate() {
+
+            if ($("#state").val() == "") {
+                alert('State is required !');
+                return false;
+            }
+            //if ($("#password").val() != $("#confirm_password").val()) {
+            //    alert('New Password and Confirm Password Does not match !');
+            //    return false;
+            //}
+        }
+</script>
+<input type="hidden" value="@Model.state" id="hstate" />
+       <script language="JavaScript">
+    $(document).ready(function () {
+         
+        $('#state').val($("#hstate").val());
+    });
+   
+    function popup(pid) {
+        var PID=jQuery(pid).attr("id");
+        
+ day=new Date();
+ id=day.getTime();
+ var url = "Invoice?orderID=" + PID;
+ 
+ window.open(url, '" + id + "', 'resizable=1,width=980,height=860,top=100,left=100,scrollbars=yes');
+
+ }
+</script>
+

@@ -1,0 +1,208 @@
+﻿@*@model IEnumerable<ExecutiveRefreshment.Entity.product>*@
+
+@model PagedList.IPagedList<ExecutiveRefreshment.Entity.product>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Products";
+}
+ 
+
+
+<div class="row bg_grey padding30" style="margin-left: 0px !important;">
+    <div class="container">
+        <h2 class="float_left">Products -> @ViewBag.CategoryName</h2>
+        <form class="select">
+            <select id="ddlSort" onchange="sort()">
+                <option value="">Select Sorting</option>
+                <option value="PHF">Price High First</option>
+                <option value="PLF">Price Low First</option>
+                <option value="ASC">Ascending</option>
+                <option value="DESC">Descending</option>
+            </select>
+        </form>
+    </div>
+
+
+</div>
+
+<div class="row  padding50" style="padding-top:15px !important;">
+    <div class="container">
+        <div class="pro_menu">
+            <div class="bg_grey"><h3>Search</h3></div>
+
+            <div>
+                @*@using (@Html.BeginForm("Index", "Product", FormMethod.Get, new { @id = ViewBag.ID, catid = ViewBag.CatID, title = ViewBag.ProductTitle })){*@
+               <form id="searchForm" action="@Url.Action("index", "Product",  new { @id = ViewBag.ID, catid = ViewBag.CatID, title = ViewBag.ProductTitle })" method="get">
+            <input type="search" name="q" id="q" class="search" onblur="search(this)" placeholder="Product Code">
+                    
+
+                   </form>
+            </div>
+            <div class="bg_grey"><h3>@ViewBag.ProductTitle</h3></div>
+            <div>
+                <ul>
+                    @foreach (var cat in ViewBag.CategoryList)
+                    {
+                        <li ><a   href="@Url.Action("index","Product", new {   @id = ViewBag.ID, catid=cat.id, title = ViewBag.ProductTitle })">@cat.name</a></li>
+                    }
+                    @*<li><a href="#">Apple Cider</a></li>
+                    <li><a href="#">Hot chocolate / cocoa</a></li>
+                    <li><a href="#">K - Cups</a></li>
+                    <li><a href="#">Portion Pack</a></li>
+                    <li><a href="#">Tassimo</a></li>*@
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="product_item">
+            @*<div class="clear"></div>*@
+                @foreach (var product in Model)
+                {
+                    <div>
+                        <div> <img  src="~/images/products/7.jpg" width="154" height="158" alt=""></div>
+                        <ul class="pro_box" onclick="GoToCart(@product.id)">
+                            <li>
+
+                                <a href="#"   onclick="GoToCart(@product.id)"><span> <img src="~/images/card.png" width="15" height="12" alt=""> View Details<br>
+                                      <b>Price : @product.price</b></span></a>
+                            </li>
+                            <li class="bg_grey" style="height:60px;  padding:3px;">
+                            <h4 style="font-size:15px !important;">@product.title</h4>
+                                @*<p><b>Price : </b>@product.price</p>*@
+                            </li>
+
+
+                        </ul>
+
+
+                    </div>
+
+                }
+            
+            <div style="width:100%;border:none; margin-left: 5px; font-size:20px;">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                @Html.PagedListPager(Model, Page_No => Url.Action("Index",
+    new { Page_No, Sorting_Order = ViewBag.CurrentSortOrder, Filter_Value = ViewBag.FilterValue }))
+
+            </div>
+            @*<ul class="pagination">
+                <li><a href="#">&lt; Back</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <li><a href="#">Next &gt;</a></li>
+            </ul>*@
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function(){
+    $("#clicktab").click(function(){
+        $("#ontab").slideToggle();
+    });
+});
+</script>
+
+<script type="text/javascript">
+    var get_params = function (search_string) {
+
+        var parse = function (params, pairs) {
+            var pair = pairs[0];
+            var parts = pair.split('=');
+            var key = decodeURIComponent(parts[0]);
+            var value = decodeURIComponent(parts.slice(1).join('='));
+
+            // Handle multiple parameters of the same name
+            if (typeof params[key] === "undefined") {
+                params[key] = value;
+            } else {
+                params[key] = [].concat(params[key], value);
+            }
+
+            return pairs.length == 1 ? params : parse(params, pairs.slice(1))
+        }
+
+        // Get rid of leading ?
+        return search_string.length == 0 ? {} : parse({}, search_string.substr(1).split('&'));
+    }
+
+        
+    //
+                var PARAMS= get_params(location.search);
+                var searchText = PARAMS['q'];
+                var sortValue = PARAMS['sort'];
+                
+               // $("#q").val(searchText);
+                $("#ddlSort").val(sortValue);
+
+                var prePart = window.location.protocol + "//" + window.location.host + window.location.pathname
+                var postPart = location.search;
+                var str = prePart + postPart;
+                function search() {
+                    
+                    //  alert(prePart + postPart);
+
+                    var queryString = $("#q").val();
+                   // + "&q=" + queryString;
+                    var n = str.search("&q=");
+                     
+                    if(n<0)
+                        window.location.href = prePart + postPart + "&q=" + queryString;
+                    else {
+                        
+                        var params = get_params(location.search);
+                        var value = params['q'];
+                        
+                        str = str.replace(value, queryString);
+                        
+                        window.location.href = str;
+                    }
+                    
+                }
+                function sort() {
+                    
+                    var queryString = $("#ddlSort").val();
+                    var n = str.search("&sort=");
+                    if (n < 0)
+                        window.location.href = prePart + postPart + "&sort=" + queryString;
+                    else {
+ 
+                        var params = get_params(location.search);
+                        var value = params['sort'];
+                         
+                        str = str.replace(value, queryString);
+                       
+                        window.location.href = str;
+                    }
+                    
+
+                }
+
+                function GoToCart(id) {
+                     
+                   
+                    var prePart = window.location.protocol + "//" + window.location.host + window.location.pathname
+                    console.log(prePart);
+
+                    var postPart = location.search;
+                    var fullPart = prePart + postPart;
+                    console.log(fullPart);
+                    console.log(fullPart);
+                    var final = fullPart.replace('index', 'cart');
+                    console.log(final + "&pid=" + id);
+                    window.location.href = final + "&pid=" + id;
+
+
+                }
+
+</script>
+
+ 
